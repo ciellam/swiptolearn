@@ -592,6 +592,67 @@ body.locked {
   display: none;
 }
 
+/* Expand button on card back */
+.card-expand-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.card-expand-btn:active {
+  background: rgba(255,255,255,0.15);
+  color: var(--text-primary);
+}
+
+/* Expanded card — fullscreen overlay */
+.card--expanded {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  z-index: 1000 !important;
+  border-radius: 0 !important;
+}
+
+.card--expanded .card-front,
+.card--expanded .card-back {
+  border-radius: 0;
+}
+
+.card--expanded .card-expand-btn svg path {
+  d: path("M7 3H3v4M11 3h4v4M7 15H3v-4M11 15h4v-4");
+}
+
+/* Dim everything behind expanded card */
+body.card-expanded-active .card-stack {
+  z-index: 999;
+}
+
+body.card-expanded-active .bottom-nav {
+  z-index: 0;
+}
+
+body.card-expanded-active .undo-btn {
+  display: none !important;
+}
+
 /* Card back */
 .card-back .card-meta {
   padding: var(--space-md) var(--space-lg) 0;

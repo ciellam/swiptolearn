@@ -151,8 +151,7 @@ const App = (() => {
     stack.appendChild(currentEl);
 
     // Init swipe on current card
-    Swipe.destroy();
-    Swipe.init(currentEl, {
+    const swipeCallbacks = {
       onRight: () => {
         lastSwipedCard = current;
         lastSwipeAction = 'save';
@@ -169,7 +168,11 @@ const App = (() => {
         renderCurrentCards();
         showUndo();
       },
-    });
+    };
+    // Store callbacks so expand/collapse can re-init swipe
+    currentEl._swipeCallbacks = swipeCallbacks;
+    Swipe.destroy();
+    Swipe.init(currentEl, swipeCallbacks);
   }
 
   function showUndo() {
