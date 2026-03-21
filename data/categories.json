@@ -4,7 +4,14 @@
     "name": "UX & Product",
     "icon": "assets/icons/ux.svg",
     "accentGradient": ["#FF6B6B", "#FF8E53", "#FDCB6E"],
-    "types": ["vocab", "buzzword", "framework", "articulation"]
+    "types": ["vocab", "buzzword", "framework"]
+  },
+  {
+    "id": "articulation",
+    "name": "Design Articulation",
+    "icon": "assets/icons/articulation.svg",
+    "accentGradient": ["#D4A76A", "#C47D3B", "#8B5E34"],
+    "types": ["trade-off", "rationale", "critique", "stakeholder", "presentation", "storytelling"]
   },
   {
     "id": "interview",
@@ -18,13 +25,13 @@
     "name": "Vibe Coding & AI",
     "icon": "assets/icons/code.svg",
     "accentGradient": ["#00B894", "#0984E3", "#6C5CE7"],
-    "types": ["concept", "command", "workflow", "tip"]
+    "types": ["concept", "command", "workflow", "tip", "prompting"]
   },
   {
     "id": "english",
     "name": "English",
     "icon": "assets/icons/english.svg",
     "accentGradient": ["#FDCB6E", "#E17055", "#D63031"],
-    "types": ["sentence-structure", "phrase", "vocabulary", "presentation"]
+    "types": ["writing", "phrase", "vocabulary", "presentation"]
   }
 ]

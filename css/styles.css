@@ -448,8 +448,8 @@ body.locked {
 
 .card-stack {
   position: relative;
-  width: 100%;
-  max-width: 88vw;
+  width: 92vw;
+  max-width: 420px;
   height: calc((100dvh - 160px) * 0.7);
   max-height: 530px;
   perspective: 1200px;
@@ -592,17 +592,14 @@ body.locked {
   display: none;
 }
 
-/* Expand button — lives in card-inner, only visible when flipped */
-.card-expand-btn {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 10;
+/* Expand & close buttons — inside card-back */
+.card-expand-btn,
+.card-close-btn {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -613,48 +610,132 @@ body.locked {
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
   transition: background 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
 }
 
-.card--flipped .card-expand-btn {
-  display: flex;
-}
-
-.card-expand-btn:active {
+.card-expand-btn:active,
+.card-close-btn:active {
   background: rgba(255,255,255,0.2);
   color: var(--text-primary);
 }
 
-/* Expanded card — fullscreen overlay */
+/* Position expand button in the meta row */
+.card-expand-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+}
+
+/* Expand button: visible when flipped but NOT expanded */
+.card--flipped:not(.card--expanded) .card-expand-btn {
+  display: flex;
+}
+
+/* Give meta row right padding so badge doesn't overlap with expand btn */
+.card--flipped .card-back .card-meta {
+  padding-right: 56px;
+}
+
+/* Close button: hidden by default */
+.card-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+}
+
+.card--expanded .card-close-btn {
+  display: flex;
+}
+
+.card--expanded .card-expand-btn {
+  display: none;
+}
+
+/* ---- EXPANDED CARD — true fullscreen overlay ---- */
 .card--expanded {
   position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100dvh !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
   z-index: 1000 !important;
   border-radius: 0 !important;
+  transform: none !important;
 }
 
-.card--expanded .card-front,
+.card--expanded .card-inner {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  transform: none !important;
+  transform-style: flat !important;
+}
+
+.card--expanded .card-front {
+  display: none !important;
+}
+
 .card--expanded .card-back {
-  border-radius: 0;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: var(--bg-deep) !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+  transform: none !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  padding-top: calc(48px + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(var(--space-2xl) + env(safe-area-inset-bottom, 0px));
 }
 
-.card--expanded .card-expand-btn svg path {
-  d: path("M7 3H3v4M11 3h4v4M7 15H3v-4M11 15h4v-4");
+.card--expanded .card-accent--back {
+  display: none;
 }
 
-/* Dim everything behind expanded card */
+.card--expanded .card-back .card-meta {
+  padding: var(--space-md) var(--space-lg) 0;
+  padding-right: 56px;
+}
+
+.card--expanded .card-close-btn {
+  position: fixed;
+  top: calc(12px + env(safe-area-inset-top, 0px));
+  right: 16px;
+  z-index: 1001;
+}
+
+/* Remove perspective on card-stack when expanded — perspective creates
+   a containing block that traps position:fixed children */
 body.card-expanded-active .card-stack {
-  z-index: 999;
+  perspective: none !important;
 }
 
-body.card-expanded-active .bottom-nav {
-  z-index: 0;
-}
-
+body.card-expanded-active .view-header,
+body.card-expanded-active .bottom-nav,
 body.card-expanded-active .undo-btn {
   display: none !important;
+}
+
+/* Remove parent padding so expanded card has no offset */
+body.card-expanded-active .view-content {
+  padding: 0 !important;
+}
+
+body.card-expanded-active .feed-content {
+  padding: 0 !important;
 }
 
 /* Card back */
@@ -1290,6 +1371,80 @@ body.card-expanded-active .undo-btn {
   .card-detail-modal--open .card-detail {
     transform: translateY(0) scale(1);
   }
+}
+
+/* --- ARCHIVE --- */
+.archive-restore-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.archive-restore-btn:hover {
+  background: rgba(255,255,255,0.12);
+  color: var(--text-primary);
+}
+
+.archive-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.archive-fullscreen--open {
+  opacity: 1;
+}
+
+.archive-fullscreen-inner {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-deep);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-top: calc(16px + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(var(--space-2xl) + env(safe-area-inset-bottom, 0px));
+}
+
+.archive-close-btn {
+  position: fixed !important;
+  top: calc(12px + env(safe-area-inset-top, 0px));
+  right: 16px;
+  z-index: 1001;
+  display: flex !important;
+}
+
+.archive-restore-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-md);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.archive-restore-action-btn:hover {
+  background: rgba(255,255,255,0.12);
 }
 
 /* --- TRANSITIONS --- */

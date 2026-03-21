@@ -45,6 +45,11 @@ EXAMPLE_CARD = {
     "createdAt": "2026-03-18"
 }
 
+DEFAULT_MODEL = "claude-sonnet-4-6"
+MODEL_BY_CATEGORY = {
+    "articulation": "claude-opus-4-6",
+}
+
 SYSTEM_PROMPT = """You are a flashcard content writer for a learning app called Little by Little. You generate detailed, high-quality flashcard content in JSON format.
 
 Your audience is an intermediate product designer who is a beginner at coding and English. Write clearly, avoid unnecessary jargon, and include practical examples.
@@ -60,6 +65,36 @@ Every card's "back" field must be HTML with:
 - No <h1>, <h2>, or <h3> — only <h4>
 
 Output ONLY a valid JSON array of card objects. No explanation, no markdown code fences, no extra text."""
+
+ARTICULATION_SYSTEM_PROMPT = """You are a flashcard content writer for a learning app called Little by Little. You generate detailed, high-quality flashcard content in JSON format.
+
+Your audience is an intermediate product designer who needs to communicate design decisions clearly to stakeholders, engineers, and leadership. Write with depth and nuance — these cards teach the art of design communication.
+
+Every card's "back" field must be HTML with:
+- At least 3-4 <h4> subheaders organizing the content into sections
+- 10-20 sentences of content across those sections — richer and more detailed than standard cards
+- <p> tags for paragraphs, <strong>/<em> for emphasis
+- <ul> or <ol> for lists
+- At least two <div class='example-box'><div class='label'>Label</div>content</div> blocks with real-world scenarios
+- Include templates, scripts, or frameworks the user can directly apply
+- No <div class='diagram'> blocks
+- No markdown — only HTML
+- No <h1>, <h2>, or <h3> — only <h4>
+
+Output ONLY a valid JSON array of card objects. No explanation, no markdown code fences, no extra text."""
+
+# Hardcoded tool comparison context for prompting cards (update periodically)
+PROMPTING_CONTEXT = """
+When generating "prompting" type cards for vibe-coding, include practical comparisons between AI tools where relevant:
+
+Tool strengths (as of 2026):
+- Claude (Anthropic): Best for long-form writing, nuanced reasoning, code review, following complex instructions. Supports 1M token context.
+- ChatGPT (OpenAI): Strong at general tasks, browsing, image generation (DALL-E), plugins ecosystem. GPT-4o is multimodal.
+- Gemini (Google): Deep integration with Google Workspace, strong at research/search tasks, multimodal with video understanding.
+- GitHub Copilot: Best for inline code completion, IDE integration, code generation from comments. Uses multiple model backends.
+
+Focus on practical prompting techniques: chain-of-thought, few-shot examples, system prompts, structured output, role-based prompting, prompt chaining.
+"""
 
 
 def load_existing_cards():
@@ -84,6 +119,7 @@ def get_next_id(existing_cards, category_id):
     """Find the next available ID number for a category."""
     prefix_map = {
         "ux-product": "ux-",
+        "articulation": "da-",
         "interview": "int-",
         "vibe-coding": "vc-",
         "english": "en-",
@@ -112,6 +148,7 @@ def build_user_prompt(category, next_id, count, existing_fronts):
     """Build the user prompt for card generation."""
     prefix_map = {
         "ux-product": "ux",
+        "articulation": "da",
         "interview": "int",
         "vibe-coding": "vc",
         "english": "en",
@@ -154,13 +191,24 @@ def generate_cards(client, category, count, existing_cards, max_retries=3):
     existing_fronts = get_existing_fronts(existing_cards, category["id"])
     user_prompt = build_user_prompt(category, next_id, count, existing_fronts)
 
+    # Select model and system prompt based on category
+    model = MODEL_BY_CATEGORY.get(category["id"], DEFAULT_MODEL)
+    if category["id"] == "articulation":
+        system_prompt = ARTICULATION_SYSTEM_PROMPT
+    else:
+        system_prompt = SYSTEM_PROMPT
+
+    # Add prompting context for vibe-coding
+    if category["id"] == "vibe-coding":
+        system_prompt = system_prompt + PROMPTING_CONTEXT
+
     for attempt in range(max_retries):
         try:
-            print(f"  Calling Claude API (attempt {attempt + 1})...")
+            print(f"  Calling Claude API ({model}, attempt {attempt + 1})...")
             message = client.messages.create(
-                model="claude-sonnet-4-20250514",
+                model=model,
                 max_tokens=8192,
-                system=SYSTEM_PROMPT,
+                system=system_prompt,
                 messages=[{"role": "user", "content": user_prompt}],
             )
 

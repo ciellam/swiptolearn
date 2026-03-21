@@ -6,6 +6,7 @@ const App = (() => {
   const views = {
     feed: document.getElementById('feed-view'),
     library: document.getElementById('library-view'),
+    archive: document.getElementById('archive-view'),
   };
   const nav = document.getElementById('bottom-nav');
   const navTabs = document.querySelectorAll('.nav-tab');
@@ -76,6 +77,10 @@ const App = (() => {
 
     if (viewName === 'library') {
       Library.render();
+    }
+
+    if (viewName === 'archive') {
+      Archive.render();
     }
   }
 

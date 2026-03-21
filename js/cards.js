@@ -11,7 +11,7 @@ const Cards = (() => {
   };
 
   const QUEUE_SIZE = 100;
-  const MAX_CARDS_BEFORE_PERMANENT_DISMISS = 200;
+  const MAX_CARDS_BEFORE_PERMANENT_DISMISS = 100;
 
   // Spaced repetition intervals (in milliseconds)
   const REPEAT_INTERVALS = [
@@ -187,6 +187,17 @@ const Cards = (() => {
     setStorage(STORAGE_KEYS.saved, saved);
   }
 
+  function getArchivedCards() {
+    const dismissed = getStorage(STORAGE_KEYS.dismissed);
+    return dismissed.map(id => allCards.find(c => c.id === id)).filter(Boolean);
+  }
+
+  function restoreCard(cardId) {
+    let dismissed = getStorage(STORAGE_KEYS.dismissed);
+    dismissed = dismissed.filter(id => id !== cardId);
+    setStorage(STORAGE_KEYS.dismissed, dismissed);
+  }
+
   function getNote(cardId) {
     const notes = getStorage(STORAGE_KEYS.notes);
     return notes[cardId] || '';
@@ -243,6 +254,16 @@ const Cards = (() => {
         </div>
         <div class="card-back">
           <div class="card-accent card-accent--back" style="background: ${multiGrad}"></div>
+          <button class="card-expand-btn" aria-label="Expand card">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3 11v4h4M15 7V3h-4M3 7V3h4M15 11v4h-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="card-close-btn" aria-label="Close fullscreen">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M5 5l8 8M13 5l-8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </button>
           <div class="card-meta">
             <span class="card-category" style="color: ${gradStart}">
               <span class="card-category-icon">${iconSvg}</span>
@@ -258,41 +279,53 @@ const Cards = (() => {
             <textarea class="card-note-textarea" placeholder="Add a note..." data-card-id="${card.id}">${escapeHtml(note)}</textarea>
           </div>
         </div>
-        <button class="card-expand-btn" aria-label="Expand card">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M3 11v4h4M15 7V3h-4M3 7V3h4M15 11v4h-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
       </div>
     `;
 
-    // Tap to flip
+    // Tap to flip + double-tap to expand
     if (!isStack) {
+      let lastTap = 0;
+
       el.addEventListener('click', (e) => {
-        // Don't flip on swipe drag, and don't flip when interacting with textarea
         if (el.dataset.dragging === 'true') return;
         if (e.target.closest('.card-note-textarea')) return;
+        if (e.target.closest('.card-close-btn')) return;
         if (e.target.closest('.card-expand-btn')) return;
-        // Don't flip when expanded
         if (el.classList.contains('card--expanded')) return;
-        el.classList.toggle('card--flipped');
+
+        const now = Date.now();
+        const isDoubleTap = (now - lastTap) < 350;
+        lastTap = now;
+
+        if (isDoubleTap && el.classList.contains('card--flipped')) {
+          // Double-tap on back → expand
+          el.classList.add('card--expanded');
+          document.body.classList.add('card-expanded-active');
+          Swipe.destroy();
+        } else {
+          el.classList.toggle('card--flipped');
+        }
       });
 
-      // Expand button
+      // Expand button (visible on flipped card, not when expanded)
       const expandBtn = el.querySelector('.card-expand-btn');
       if (expandBtn) {
         expandBtn.addEventListener('click', (e) => {
           e.stopPropagation();
-          const isExpanded = el.classList.contains('card--expanded');
-          if (isExpanded) {
-            el.classList.remove('card--expanded');
-            document.body.classList.remove('card-expanded-active');
-            Swipe.init(el, el._swipeCallbacks);
-          } else {
-            el.classList.add('card--expanded');
-            document.body.classList.add('card-expanded-active');
-            Swipe.destroy();
-          }
+          el.classList.add('card--expanded');
+          document.body.classList.add('card-expanded-active');
+          Swipe.destroy();
+        });
+      }
+
+      // Close button (only visible when expanded)
+      const closeBtn = el.querySelector('.card-close-btn');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          el.classList.remove('card--expanded');
+          document.body.classList.remove('card-expanded-active');
+          Swipe.init(el, el._swipeCallbacks);
         });
       }
 
@@ -322,6 +355,7 @@ const Cards = (() => {
     const icons = {
       'ux-product': '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.5"/><path d="M15 9l2 2-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 17h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
       'interview': '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3C7.03 3 3 6.58 3 11c0 2.48 1.38 4.68 3.5 6.12V21l3.12-1.71C10.38 19.43 11.17 19.5 12 19.5c4.97 0 9-3.58 9-8S16.97 3 12 3z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.5" cy="11" r="1" fill="currentColor"/><circle cx="12" cy="11" r="1" fill="currentColor"/><circle cx="15.5" cy="11" r="1" fill="currentColor"/></svg>',
+      'articulation': '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
       'vibe-coding': '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 8l-4 4 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 8l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4l-4 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
       'english': '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h10M4 17h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M18 14l2.5 7M20.5 21L23 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.5 18h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
     };
@@ -351,6 +385,8 @@ const Cards = (() => {
     dismissCard,
     getSavedCards,
     removeFromLibrary,
+    getArchivedCards,
+    restoreCard,
     getNote,
     setNote,
     renderCard,
