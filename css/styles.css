@@ -592,21 +592,21 @@ body.locked {
   display: none;
 }
 
-/* Expand button on card back */
+/* Expand button — lives in card-inner, only visible when flipped */
 .card-expand-btn {
   position: absolute;
   top: 14px;
   right: 14px;
-  z-index: 5;
-  display: flex;
+  z-index: 10;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 36px;
   height: 36px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.1);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: 8px;
   color: var(--text-secondary);
   cursor: pointer;
@@ -615,8 +615,12 @@ body.locked {
   transition: background 0.2s ease, color 0.2s ease;
 }
 
+.card--flipped .card-expand-btn {
+  display: flex;
+}
+
 .card-expand-btn:active {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.2);
   color: var(--text-primary);
 }
 

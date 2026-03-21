@@ -250,11 +250,6 @@ const Cards = (() => {
             </span>
             <span class="card-type">${card.type}</span>
           </div>
-          <button class="card-expand-btn" aria-label="Expand card">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M3 11v4h4M15 7V3h-4M3 7V3h4M15 11v4h-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
           <div class="card-answer">${card.back}</div>
           <div class="card-tags">
             ${card.tags.map(t => `<span class="card-tag">${t}</span>`).join('')}
@@ -263,6 +258,11 @@ const Cards = (() => {
             <textarea class="card-note-textarea" placeholder="Add a note..." data-card-id="${card.id}">${escapeHtml(note)}</textarea>
           </div>
         </div>
+        <button class="card-expand-btn" aria-label="Expand card">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3 11v4h4M15 7V3h-4M3 7V3h4M15 11v4h-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
     `;
 

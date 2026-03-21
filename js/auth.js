@@ -5,6 +5,7 @@
 const Auth = (() => {
   // Pre-computed SHA-256 hash — the actual password never appears in code
   const PASSWORD_HASH = '573c34b6cf0329baf63f799a542e4757472fceb4d7e6422d6907b2e4bc59f5f8';
+  const AUTH_KEY = 'learninghub_authenticated';
 
   async function hashPassword(password) {
     const encoder = new TextEncoder();
@@ -19,8 +20,22 @@ const Auth = (() => {
     return hash === PASSWORD_HASH;
   }
 
+  function isAuthenticated() {
+    return localStorage.getItem(AUTH_KEY) === 'true';
+  }
+
   // --- UI Bindings ---
   function init() {
+    // Skip lock screen if already authenticated on this device
+    if (isAuthenticated()) {
+      document.getElementById('lock-screen').hidden = true;
+      document.body.classList.remove('locked');
+      if (typeof App !== 'undefined') {
+        App.start();
+      }
+      return;
+    }
+
     const form = document.getElementById('lock-form');
     const input = document.getElementById('lock-input');
     const error = document.getElementById('lock-error');
@@ -37,6 +52,7 @@ const Auth = (() => {
 
       const valid = await verifyPassword(password);
       if (valid) {
+        localStorage.setItem(AUTH_KEY, 'true');
         onUnlock();
       } else {
         showError(error, 'Wrong password. Try again.');
