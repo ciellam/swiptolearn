@@ -3,9 +3,9 @@
    ============================================ */
 
 const Auth = (() => {
-  const STORAGE_KEY = 'learninghub_password';
+  // Pre-computed SHA-256 hash — the actual password never appears in code
+  const PASSWORD_HASH = '573c34b6cf0329baf63f799a542e4757472fceb4d7e6422d6907b2e4bc59f5f8';
 
-  // Simple hash function for password (not cryptographic, just a deterrent)
   async function hashPassword(password) {
     const encoder = new TextEncoder();
     const data = encoder.encode(password + 'learninghub_salt');
@@ -14,39 +14,16 @@ const Auth = (() => {
     return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
   }
 
-  function isFirstVisit() {
-    return !localStorage.getItem(STORAGE_KEY);
-  }
-
-  function getStoredHash() {
-    return localStorage.getItem(STORAGE_KEY);
-  }
-
-  async function setPassword(password) {
-    const hash = await hashPassword(password);
-    localStorage.setItem(STORAGE_KEY, hash);
-    return hash;
-  }
-
   async function verifyPassword(password) {
     const hash = await hashPassword(password);
-    return hash === getStoredHash();
+    return hash === PASSWORD_HASH;
   }
 
   // --- UI Bindings ---
   function init() {
     const form = document.getElementById('lock-form');
     const input = document.getElementById('lock-input');
-    const subtitle = document.getElementById('lock-subtitle');
-    const btnText = document.getElementById('lock-btn-text');
     const error = document.getElementById('lock-error');
-
-    if (isFirstVisit()) {
-      subtitle.textContent = 'Create a password to protect your hub';
-      input.placeholder = 'Choose a password';
-      input.autocomplete = 'new-password';
-      btnText.textContent = 'Get Started';
-    }
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -58,25 +35,14 @@ const Auth = (() => {
         return;
       }
 
-      if (password.length < 4) {
-        showError(error, 'Password must be at least 4 characters');
-        shakeInput(input);
-        return;
-      }
-
-      if (isFirstVisit()) {
-        await setPassword(password);
+      const valid = await verifyPassword(password);
+      if (valid) {
         onUnlock();
       } else {
-        const valid = await verifyPassword(password);
-        if (valid) {
-          onUnlock();
-        } else {
-          showError(error, 'Wrong password. Try again.');
-          shakeInput(input);
-          input.value = '';
-          input.focus();
-        }
+        showError(error, 'Wrong password. Try again.');
+        shakeInput(input);
+        input.value = '';
+        input.focus();
       }
     });
 
