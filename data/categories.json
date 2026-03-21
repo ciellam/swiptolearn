@@ -1,0 +1,30 @@
+[
+  {
+    "id": "ux-product",
+    "name": "UX & Product",
+    "icon": "assets/icons/ux.svg",
+    "accentGradient": ["#FF6B6B", "#FF8E53", "#FDCB6E"],
+    "types": ["vocab", "buzzword", "framework", "articulation"]
+  },
+  {
+    "id": "interview",
+    "name": "Interview Prep",
+    "icon": "assets/icons/interview.svg",
+    "accentGradient": ["#6C5CE7", "#E84393", "#FD79A8"],
+    "types": ["behavioral", "situational", "design-specific", "curveball"]
+  },
+  {
+    "id": "vibe-coding",
+    "name": "Vibe Coding & AI",
+    "icon": "assets/icons/code.svg",
+    "accentGradient": ["#00B894", "#0984E3", "#6C5CE7"],
+    "types": ["concept", "command", "workflow", "tip"]
+  },
+  {
+    "id": "english",
+    "name": "English",
+    "icon": "assets/icons/english.svg",
+    "accentGradient": ["#FDCB6E", "#E17055", "#D63031"],
+    "types": ["sentence-structure", "phrase", "vocabulary", "presentation"]
+  }
+]

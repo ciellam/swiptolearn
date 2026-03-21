@@ -1,0 +1,40 @@
+name: Generate Cards
+
+on:
+  schedule:
+    # Runs every 3 days at 9:00 AM UTC
+    - cron: '0 9 */3 * *'
+  workflow_dispatch: # Allow manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic python-dotenv
+
+      - name: Generate cards
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python tools/generate_cards.py --count 50
+
+      - name: Commit and push new cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/cards.json
+          # Only commit if there are changes
+          git diff --staged --quiet || git commit -m "Add auto-generated cards $(date +%Y-%m-%d)"
+          git push
