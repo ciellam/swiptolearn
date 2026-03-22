@@ -54,7 +54,7 @@ Every card back must use this HTML structure:
 - `<div class='example-box'><div class='label'>Label here</div>...</div>` — concrete examples with a descriptive label
 
 ### What NOT to include
-- No `<div class='diagram'>` blocks (diagrams are disabled for now)
+- `<div class='diagram'>` blocks for ASCII diagrams where helpful (comparison tables, flow diagrams, hierarchies)
 - No markdown — only HTML
 - No `<h1>`, `<h2>`, or `<h3>` tags — only `<h4>` for subheaders
 
@@ -84,11 +84,11 @@ Content is written for an **intermediate product designer** who is a **beginner 
 
 ## Auto-Generation
 Weekly auto-generation is configured via GitHub Actions (`.github/workflows/generate-cards.yml`):
-- Runs every Monday at 9:00 AM UTC
+- Runs on the 1st and 15th of each month at 9:00 AM UTC
 - Generates 50 cards distributed across all 6 categories
 - Commits and pushes changes automatically
 - No extra cost — GitHub Actions is free for public repos
-- API cost: ~$2.76/month (Opus for articulation, Sonnet for rest)
+- API cost: ~$0.91/month (biweekly with diagrams) (Opus for articulation, Sonnet for rest)
 
 ## Manual Fallback
 If `tools/generate_cards.py` is not available or the API key is not set, Claude Code can generate cards directly by:

@@ -1,9 +1,9 @@
-name: Generate Cards
+name: Generate AI News
 
 on:
   schedule:
-    # Runs on the 1st and 15th of each month at 9:00 AM UTC
-    - cron: '0 9 1,15 * *'
+    # Runs every Monday at 10:00 AM UTC (1 hour after cards on 1st/15th)
+    - cron: '0 10 * * 1'
   workflow_dispatch: # Allow manual trigger from GitHub UI
 
 permissions:
@@ -25,16 +25,15 @@ jobs:
       - name: Install dependencies
         run: pip install anthropic python-dotenv
 
-      - name: Generate cards
+      - name: Generate news
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python tools/generate_cards.py --count 50
+        run: python tools/generate_news.py --count 10
 
-      - name: Commit and push new cards
+      - name: Commit and push news
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/cards.json
-          # Only commit if there are changes
-          git diff --staged --quiet || git commit -m "Add auto-generated cards $(date +%Y-%m-%d)"
+          git add data/news.json
+          git diff --staged --quiet || git commit -m "Update AI news $(date +%Y-%m-%d)"
           git push

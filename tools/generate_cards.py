@@ -60,7 +60,7 @@ Every card's "back" field must be HTML with:
 - <p> tags for paragraphs, <strong>/<em> for emphasis
 - <ul> or <ol> for lists
 - At least one <div class='example-box'><div class='label'>Label</div>content</div> block with a concrete, real-world example
-- No <div class='diagram'> blocks
+- Use <div class='diagram'>content</div> for ASCII diagrams where helpful (comparison tables, flow diagrams, hierarchies)
 - No markdown — only HTML
 - No <h1>, <h2>, or <h3> — only <h4>
 
@@ -77,7 +77,7 @@ Every card's "back" field must be HTML with:
 - <ul> or <ol> for lists
 - At least two <div class='example-box'><div class='label'>Label</div>content</div> blocks with real-world scenarios
 - Include templates, scripts, or frameworks the user can directly apply
-- No <div class='diagram'> blocks
+- Use <div class='diagram'>content</div> for ASCII diagrams where helpful (comparison tables, flow diagrams, hierarchies)
 - No markdown — only HTML
 - No <h1>, <h2>, or <h3> — only <h4>
 
@@ -94,7 +94,7 @@ Every card's "back" field must be HTML with:
 - <ul> or <ol> for lists
 - At least one <div class='example-box'><div class='label'>Label</div>content</div> block with a real story, quote, or practical tip
 - Include actionable advice, not just platitudes
-- No <div class='diagram'> blocks
+- Use <div class='diagram'>content</div> for ASCII diagrams where helpful (comparison tables, flow diagrams, hierarchies)
 - No markdown — only HTML
 - No <h1>, <h2>, or <h3> — only <h4>
 
