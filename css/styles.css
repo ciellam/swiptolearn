@@ -1575,68 +1575,6 @@ body.card-expanded-active .feed-content {
   background: rgba(255,255,255,0.12);
 }
 
-/* --- PROGRESS RINGS --- */
-.progress-section {
-  margin-bottom: var(--space-md);
-}
-
-.progress-rings {
-  display: flex;
-  gap: var(--space-md);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding: 0 var(--space-xs) var(--space-sm);
-  -webkit-mask-image: linear-gradient(to right, #000 0%, #000 85%, transparent 100%);
-  mask-image: linear-gradient(to right, #000 0%, #000 85%, transparent 100%);
-}
-
-.progress-rings::-webkit-scrollbar {
-  display: none;
-}
-
-.progress-ring-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.progress-ring-svg {
-  display: block;
-}
-
-.progress-ring-count {
-  position: absolute;
-  top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.progress-ring-label {
-  font-size: 0.6rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  text-align: center;
-  max-width: 64px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.progress-summary {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  text-align: center;
-  padding-top: var(--space-xs);
-}
-
 /* --- NEWS --- */
 .news-content {
   padding: var(--space-md);

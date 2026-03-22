@@ -14,6 +14,13 @@
     "types": ["trade-off", "rationale", "critique", "stakeholder", "presentation", "storytelling"]
   },
   {
+    "id": "ui-vibe",
+    "name": "UI Vibe & Ideation",
+    "icon": "assets/icons/ui-vibe.svg",
+    "accentGradient": ["#A29BFE", "#6C5CE7", "#4834D4"],
+    "types": ["visual-dna", "structure", "typography", "vocabulary", "implementation"]
+  },
+  {
     "id": "interview",
     "name": "Interview Prep",
     "icon": "assets/icons/interview.svg",

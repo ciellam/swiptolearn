@@ -8,59 +8,9 @@ const Library = (() => {
   let filteredCards = [];
   let cardViewIndex = 0;
 
-  function renderProgressRings(saved) {
-    const row = document.createElement('div');
-    row.className = 'progress-rings';
-
-    const totalSaved = saved.length;
-    const totalCards = Cards.allCards.length;
-
-    Cards.categories.forEach(cat => {
-      const catTotal = Cards.allCards.filter(c => c.category === cat.id).length;
-      if (catTotal === 0) return;
-      const catSaved = saved.filter(c => c.category === cat.id).length;
-      const pct = catTotal > 0 ? catSaved / catTotal : 0;
-
-      const ring = document.createElement('div');
-      ring.className = 'progress-ring-item';
-
-      const r = 22;
-      const circumference = 2 * Math.PI * r;
-      const offset = circumference * (1 - pct);
-      const color = cat.accentGradient[0];
-
-      ring.innerHTML = `
-        <svg class="progress-ring-svg" width="56" height="56" viewBox="0 0 56 56">
-          <circle cx="28" cy="28" r="${r}" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="4"/>
-          <circle cx="28" cy="28" r="${r}" fill="none" stroke="${color}" stroke-width="4"
-            stroke-dasharray="${circumference}" stroke-dashoffset="${offset}"
-            stroke-linecap="round" transform="rotate(-90 28 28)"
-            style="transition: stroke-dashoffset 0.6s ease"/>
-        </svg>
-        <span class="progress-ring-count">${catSaved}</span>
-        <span class="progress-ring-label">${cat.name}</span>
-      `;
-      row.appendChild(ring);
-    });
-
-    // Total summary
-    const summary = document.createElement('div');
-    summary.className = 'progress-summary';
-    summary.textContent = `${totalSaved} of ${totalCards} cards saved`;
-
-    const wrapper = document.createElement('div');
-    wrapper.className = 'progress-section';
-    wrapper.appendChild(row);
-    wrapper.appendChild(summary);
-    return wrapper;
-  }
-
   function render() {
     const saved = Cards.getSavedCards();
     container.innerHTML = '';
-
-    // Always show progress rings
-    container.appendChild(renderProgressRings(saved));
 
     if (saved.length === 0) {
       container.innerHTML = `

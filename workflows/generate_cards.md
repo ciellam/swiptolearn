@@ -31,12 +31,14 @@ Generate high-quality flashcards for Little by Little using `tools/generate_card
 | Interview Prep | `interview` | behavioral, situational, design-specific, curveball | Sonnet 4.6 | `int-` |
 | Vibe Coding & AI | `vibe-coding` | concept, command, workflow, tip, prompting | Sonnet 4.6 | `vc-` |
 | English | `english` | writing, phrase, vocabulary, presentation | Sonnet 4.6 | `en-` |
+| UI Vibe & Ideation | `ui-vibe` | visual-dna, structure, typography, vocabulary, implementation | Sonnet 4.6 | `uv-` |
 | Motivation | `motivation` | discipline, mindset, happiness, perseverance | Sonnet 4.6 | `mo-` |
 
 ### Category Notes
 - **Articulation** uses Opus 4.6 for richer, longer-form content (10-20 sentences per card). Cards teach design communication: explaining trade-offs, justifying decisions, presenting to stakeholders, design storytelling.
 - **Vibe Coding** `prompting` type includes tool comparisons (Claude, ChatGPT, Gemini, Copilot). Tool comparison context is hardcoded in the script — update every few months.
 - **English** focuses on professional design/tech communication: writing (emails, Slack, specs, PRDs), phrases, vocabulary, and presentation skills.
+- **UI Vibe** teaches professional UI description: aesthetic styles, color theory with hex codes, typography pairing, layout logic, and translating vibes into CSS. Vocabulary cards include before/after upgrades.
 - **Motivation** cards are warm and heartfelt — discipline for building habits, mindset for growth thinking, happiness for celebrating progress, perseverance for pushing through hard times.
 
 ## Quality Standards
@@ -72,7 +74,7 @@ Content is written for an **intermediate product designer** who is a **beginner 
 
 ## Generation Process
 1. Run `python tools/generate_cards.py --category <category> --count <n>`
-   - `--category`: one of `ux-product`, `articulation`, `interview`, `vibe-coding`, `english`, `motivation` (omit for all categories)
+   - `--category`: one of `ux-product`, `articulation`, `ui-vibe`, `interview`, `vibe-coding`, `english`, `motivation` (omit for all categories)
    - `--count`: number of cards to generate (default: 12; distributed across categories if `--category` is omitted)
 2. Script reads `data/cards.json` for existing IDs and front texts
 3. Script selects model per category (Opus for articulation, Sonnet for rest)

@@ -106,6 +106,32 @@ Card types and their focus:
 
 Output ONLY a valid JSON array of card objects. No explanation, no markdown code fences, no extra text."""
 
+UI_VIBE_SYSTEM_PROMPT = """You are a flashcard content writer for a learning app called Little by Little. You generate detailed, high-quality flashcard content in JSON format.
+
+Your audience is an intermediate product designer who wants to learn how to describe UI aesthetics precisely and professionally — the kind of language used in portfolios, design critiques, and interviews. Teach them to articulate the "vibe" of a UI with specificity.
+
+Every card's "back" field must be HTML with:
+- At least 2-3 <h4> subheaders organizing the content into sections
+- 6-15 sentences of content across those sections
+- <p> tags for paragraphs, <strong>/<em> for emphasis
+- <ul> or <ol> for lists
+- At least one <div class='example-box'><div class='label'>Label</div>content</div> block with a concrete example
+- Include specific values: hex codes, px values, CSS properties, font names
+- Use <div class='diagram'>content</div> for ASCII diagrams where helpful (comparison tables, flow diagrams, hierarchies)
+- No markdown — only HTML
+- No <h1>, <h2>, or <h3> — only <h4>
+
+Card types and their focus:
+- visual-dna: Aesthetic styles (Minimalist, Neobrutalist, Glassmorphic, etc.), color theory with hex codes, palettes, mood descriptions, lighting & depth (shadows, blurs, layering)
+- structure: Grid systems (12-column, 8pt grid, Bento Box), spacing & rhythm, border radius philosophy, layout logic
+- typography: Font pairing (Serif/Sans-Serif combos), hierarchy, font-weight scales, line heights, readability and WCAG contrast
+- vocabulary: Professional adjectives (sophisticated, utilitarian, whimsical vs. "cool", "clean"), recruiter-friendly framing, before/after vocabulary upgrades
+- implementation: CSS mapping (backdrop-filter, flexbox, grid), translating vibes into code-friendly terms, component logic for designer-to-developer handoff
+
+For vocabulary cards, always include a "Before → After" example showing a vague description upgraded to a precise, professional one.
+
+Output ONLY a valid JSON array of card objects. No explanation, no markdown code fences, no extra text."""
+
 # Hardcoded tool comparison context for prompting cards (update periodically)
 PROMPTING_CONTEXT = """
 When generating "prompting" type cards for vibe-coding, include practical comparisons between AI tools where relevant:
@@ -147,6 +173,7 @@ def get_next_id(existing_cards, category_id):
         "vibe-coding": "vc-",
         "english": "en-",
         "motivation": "mo-",
+        "ui-vibe": "uv-",
     }
     prefix = prefix_map.get(category_id, f"{category_id}-")
     max_num = 0
@@ -177,6 +204,7 @@ def build_user_prompt(category, next_id, count, existing_fronts):
         "vibe-coding": "vc",
         "english": "en",
         "motivation": "mo",
+        "ui-vibe": "uv",
     }
     prefix = prefix_map.get(category["id"], category["id"])
     today = date.today().isoformat()
@@ -222,6 +250,8 @@ def generate_cards(client, category, count, existing_cards, max_retries=3):
         system_prompt = ARTICULATION_SYSTEM_PROMPT
     elif category["id"] == "motivation":
         system_prompt = MOTIVATION_SYSTEM_PROMPT
+    elif category["id"] == "ui-vibe":
+        system_prompt = UI_VIBE_SYSTEM_PROMPT
     else:
         system_prompt = SYSTEM_PROMPT
 
