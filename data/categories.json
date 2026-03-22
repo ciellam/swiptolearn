@@ -33,5 +33,12 @@
     "icon": "assets/icons/english.svg",
     "accentGradient": ["#FDCB6E", "#E17055", "#D63031"],
     "types": ["writing", "phrase", "vocabulary", "presentation"]
+  },
+  {
+    "id": "motivation",
+    "name": "Motivation",
+    "icon": "assets/icons/motivation.svg",
+    "accentGradient": ["#FF6B81", "#EE5A24", "#F79F1F"],
+    "types": ["discipline", "mindset", "happiness", "perseverance"]
   }
 ]

@@ -92,6 +92,30 @@ const App = (() => {
     const feedContent = document.getElementById('feed-content');
     feedContent.innerHTML = '';
 
+    // Category filter bar
+    const filterBar = document.createElement('div');
+    filterBar.className = 'feed-filters';
+    filterBar.id = 'feed-filters';
+
+    const allBtn = document.createElement('button');
+    allBtn.className = 'filter-btn filter-btn--active';
+    allBtn.dataset.filter = 'all';
+    allBtn.textContent = 'All';
+    allBtn.addEventListener('click', () => applyFeedFilter('all'));
+    filterBar.appendChild(allBtn);
+
+    Cards.categories.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.className = 'filter-btn';
+      btn.dataset.filter = cat.id;
+      btn.textContent = cat.name;
+      btn.style.setProperty('--filter-color', cat.accentGradient[0]);
+      btn.addEventListener('click', () => applyFeedFilter(cat.id));
+      filterBar.appendChild(btn);
+    });
+
+    feedContent.appendChild(filterBar);
+
     // Create card stack container
     const stack = document.createElement('div');
     stack.className = 'card-stack';
@@ -212,6 +236,17 @@ const App = (() => {
       clearTimeout(btn._timeout);
     }
 
+    renderCurrentCards();
+  }
+
+  function applyFeedFilter(categoryId) {
+    const filterBar = document.getElementById('feed-filters');
+    if (filterBar) {
+      filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('filter-btn--active'));
+      const active = filterBar.querySelector(`[data-filter="${categoryId}"]`);
+      if (active) active.classList.add('filter-btn--active');
+    }
+    Cards.setFeedFilter(categoryId);
     renderCurrentCards();
   }
 

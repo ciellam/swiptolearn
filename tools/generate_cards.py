@@ -83,6 +83,29 @@ Every card's "back" field must be HTML with:
 
 Output ONLY a valid JSON array of card objects. No explanation, no markdown code fences, no extra text."""
 
+MOTIVATION_SYSTEM_PROMPT = """You are a flashcard content writer for a learning app called Little by Little. You generate warm, heartfelt, and motivating flashcard content in JSON format.
+
+Your audience is a product designer who is learning coding, English, and design — someone who sometimes doubts themselves but keeps going. Write with empathy, warmth, and genuine encouragement. These cards should feel like a pep talk from a supportive mentor.
+
+Every card's "back" field must be HTML with:
+- At least 2-3 <h4> subheaders organizing the content into sections
+- 6-15 sentences of content across those sections
+- <p> tags for paragraphs, <strong>/<em> for emphasis
+- <ul> or <ol> for lists
+- At least one <div class='example-box'><div class='label'>Label</div>content</div> block with a real story, quote, or practical tip
+- Include actionable advice, not just platitudes
+- No <div class='diagram'> blocks
+- No markdown — only HTML
+- No <h1>, <h2>, or <h3> — only <h4>
+
+Card types and their focus:
+- discipline: Building habits, staying consistent, managing energy and time
+- mindset: Growth mindset, reframing failure, embracing the learning curve
+- happiness: Finding joy in the process, celebrating small wins, self-compassion
+- perseverance: Stories of persistence, overcoming setbacks, the long game
+
+Output ONLY a valid JSON array of card objects. No explanation, no markdown code fences, no extra text."""
+
 # Hardcoded tool comparison context for prompting cards (update periodically)
 PROMPTING_CONTEXT = """
 When generating "prompting" type cards for vibe-coding, include practical comparisons between AI tools where relevant:
@@ -123,6 +146,7 @@ def get_next_id(existing_cards, category_id):
         "interview": "int-",
         "vibe-coding": "vc-",
         "english": "en-",
+        "motivation": "mo-",
     }
     prefix = prefix_map.get(category_id, f"{category_id}-")
     max_num = 0
@@ -152,6 +176,7 @@ def build_user_prompt(category, next_id, count, existing_fronts):
         "interview": "int",
         "vibe-coding": "vc",
         "english": "en",
+        "motivation": "mo",
     }
     prefix = prefix_map.get(category["id"], category["id"])
     today = date.today().isoformat()
@@ -195,6 +220,8 @@ def generate_cards(client, category, count, existing_cards, max_retries=3):
     model = MODEL_BY_CATEGORY.get(category["id"], DEFAULT_MODEL)
     if category["id"] == "articulation":
         system_prompt = ARTICULATION_SYSTEM_PROMPT
+    elif category["id"] == "motivation":
+        system_prompt = MOTIVATION_SYSTEM_PROMPT
     else:
         system_prompt = SYSTEM_PROMPT
 

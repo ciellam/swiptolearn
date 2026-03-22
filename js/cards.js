@@ -25,6 +25,7 @@ const Cards = (() => {
   let categories = [];
   let queue = [];
   let currentIndex = 0;
+  let feedFilter = 'all'; // active feed category filter
 
   // --- Storage helpers ---
   function getStorage(key) {
@@ -62,6 +63,9 @@ const Cards = (() => {
     const savedIds = saved.map(s => s.id);
     const now = Date.now();
 
+    // Apply category filter
+    const filterFn = feedFilter === 'all' ? () => true : c => c.category === feedFilter;
+
     // Cards due for spaced repetition (saved cards that need review)
     const dueCards = saved.filter(s => {
       const seen = lastSeen[s.id];
@@ -71,17 +75,18 @@ const Cards = (() => {
       const reviewCount = s.reviewCount || 0;
       const interval = REPEAT_INTERVALS[Math.min(reviewCount, REPEAT_INTERVALS.length - 1)];
       return timeSince >= interval;
-    }).map(s => allCards.find(c => c.id === s.id)).filter(Boolean);
+    }).map(s => allCards.find(c => c.id === s.id)).filter(Boolean).filter(filterFn);
 
     // Available pool: cards not permanently dismissed
     let pool;
     if (allCards.length > MAX_CARDS_BEFORE_PERMANENT_DISMISS) {
-      // Over 200 cards: dismissed cards are permanently removed from pool
       pool = allCards.filter(c => !dismissed.includes(c.id));
     } else {
-      // Under 200 cards: dismissed cards can reappear
       pool = [...allCards];
     }
+
+    // Apply category filter to pool
+    pool = pool.filter(filterFn);
 
     // Remove cards currently saved (they come back via spaced repetition)
     const unseen = pool.filter(c => !savedIds.includes(c.id));
@@ -107,6 +112,15 @@ const Cards = (() => {
     // Trim to queue size
     queue = queue.slice(0, QUEUE_SIZE);
     currentIndex = 0;
+  }
+
+  function setFeedFilter(categoryId) {
+    feedFilter = categoryId;
+    buildQueue();
+  }
+
+  function getFeedFilter() {
+    return feedFilter;
   }
 
   function shuffle(arr) {
@@ -282,10 +296,8 @@ const Cards = (() => {
       </div>
     `;
 
-    // Tap to flip + double-tap to expand
+    // Tap to flip
     if (!isStack) {
-      let lastTap = 0;
-
       el.addEventListener('click', (e) => {
         if (el.dataset.dragging === 'true') return;
         if (e.target.closest('.card-note-textarea')) return;
@@ -293,18 +305,7 @@ const Cards = (() => {
         if (e.target.closest('.card-expand-btn')) return;
         if (el.classList.contains('card--expanded')) return;
 
-        const now = Date.now();
-        const isDoubleTap = (now - lastTap) < 350;
-        lastTap = now;
-
-        if (isDoubleTap && el.classList.contains('card--flipped')) {
-          // Double-tap on back → expand
-          el.classList.add('card--expanded');
-          document.body.classList.add('card-expanded-active');
-          Swipe.destroy();
-        } else {
-          el.classList.toggle('card--flipped');
-        }
+        el.classList.toggle('card--flipped');
       });
 
       // Expand button (visible on flipped card, not when expanded)
@@ -358,6 +359,7 @@ const Cards = (() => {
       'articulation': '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
       'vibe-coding': '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 8l-4 4 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 8l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4l-4 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
       'english': '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h10M4 17h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M18 14l2.5 7M20.5 21L23 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.5 18h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+      'motivation': '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor" opacity="0.8"/></svg>',
     };
     return icons[categoryId] || '';
   }
@@ -391,6 +393,8 @@ const Cards = (() => {
     setNote,
     renderCard,
     getCategoryById,
+    setFeedFilter,
+    getFeedFilter,
     get categories() { return categories; },
     get allCards() { return allCards; },
   };

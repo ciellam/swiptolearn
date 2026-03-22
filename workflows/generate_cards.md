@@ -12,7 +12,7 @@ Generate high-quality flashcards for Little by Little using `tools/generate_card
 ```json
 {
   "id": "category-001",
-  "category": "ux-product | articulation | interview | vibe-coding | english",
+  "category": "ux-product | articulation | interview | vibe-coding | english | motivation",
   "type": "see card types below",
   "front": "Card front text (question, term, or prompt)",
   "back": "HTML-structured explanation (see quality standards)",
@@ -31,11 +31,13 @@ Generate high-quality flashcards for Little by Little using `tools/generate_card
 | Interview Prep | `interview` | behavioral, situational, design-specific, curveball | Sonnet 4.6 | `int-` |
 | Vibe Coding & AI | `vibe-coding` | concept, command, workflow, tip, prompting | Sonnet 4.6 | `vc-` |
 | English | `english` | writing, phrase, vocabulary, presentation | Sonnet 4.6 | `en-` |
+| Motivation | `motivation` | discipline, mindset, happiness, perseverance | Sonnet 4.6 | `mo-` |
 
 ### Category Notes
 - **Articulation** uses Opus 4.6 for richer, longer-form content (10-20 sentences per card). Cards teach design communication: explaining trade-offs, justifying decisions, presenting to stakeholders, design storytelling.
 - **Vibe Coding** `prompting` type includes tool comparisons (Claude, ChatGPT, Gemini, Copilot). Tool comparison context is hardcoded in the script — update every few months.
 - **English** focuses on professional design/tech communication: writing (emails, Slack, specs, PRDs), phrases, vocabulary, and presentation skills.
+- **Motivation** cards are warm and heartfelt — discipline for building habits, mindset for growth thinking, happiness for celebrating progress, perseverance for pushing through hard times.
 
 ## Quality Standards
 
@@ -70,7 +72,7 @@ Content is written for an **intermediate product designer** who is a **beginner 
 
 ## Generation Process
 1. Run `python tools/generate_cards.py --category <category> --count <n>`
-   - `--category`: one of `ux-product`, `articulation`, `interview`, `vibe-coding`, `english` (omit for all categories)
+   - `--category`: one of `ux-product`, `articulation`, `interview`, `vibe-coding`, `english`, `motivation` (omit for all categories)
    - `--count`: number of cards to generate (default: 12; distributed across categories if `--category` is omitted)
 2. Script reads `data/cards.json` for existing IDs and front texts
 3. Script selects model per category (Opus for articulation, Sonnet for rest)
@@ -83,7 +85,7 @@ Content is written for an **intermediate product designer** who is a **beginner 
 ## Auto-Generation
 Weekly auto-generation is configured via GitHub Actions (`.github/workflows/generate-cards.yml`):
 - Runs every Monday at 9:00 AM UTC
-- Generates 50 cards distributed across all 5 categories
+- Generates 50 cards distributed across all 6 categories
 - Commits and pushes changes automatically
 - No extra cost — GitHub Actions is free for public repos
 - API cost: ~$2.76/month (Opus for articulation, Sonnet for rest)
