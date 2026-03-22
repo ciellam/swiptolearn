@@ -303,7 +303,11 @@ const Cards = (() => {
         if (e.target.closest('.card-note-textarea')) return;
         if (e.target.closest('.card-close-btn')) return;
         if (e.target.closest('.card-expand-btn')) return;
+        if (e.target.closest('.selection-toolbar')) return;
         if (el.classList.contains('card--expanded')) return;
+        // Don't flip if user has selected text
+        const sel = window.getSelection();
+        if (sel && sel.toString().trim().length > 0) return;
 
         el.classList.toggle('card--flipped');
       });
@@ -374,6 +378,113 @@ const Cards = (() => {
     const b = Math.round(b1 + (b2-b1)*ratio);
     return `#${[r,g,b].map(c => c.toString(16).padStart(2,'0')).join('')}`;
   }
+
+  // --- Selection toolbar (highlight → Copy / Ask Claude) ---
+  let selToolbar = null;
+
+  function getOrCreateToolbar() {
+    if (selToolbar) return selToolbar;
+    const tb = document.createElement('div');
+    tb.className = 'selection-toolbar';
+    tb.innerHTML = `
+      <button class="selection-toolbar-btn" data-action="copy">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+          <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        Copy
+      </button>
+      <button class="selection-toolbar-btn" data-action="claude">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Ask Claude
+      </button>
+    `;
+    tb.addEventListener('mousedown', e => e.preventDefault());
+    tb.addEventListener('touchstart', e => e.stopPropagation());
+
+    tb.querySelector('[data-action="copy"]').addEventListener('click', (e) => {
+      e.stopPropagation();
+      const text = window.getSelection().toString().trim();
+      if (!text) return;
+      navigator.clipboard.writeText(text);
+      const btn = tb.querySelector('[data-action="copy"]');
+      btn.classList.add('selection-toolbar-btn--copied');
+      btn.querySelector('svg').nextSibling.textContent = ' Copied!';
+      setTimeout(() => {
+        btn.classList.remove('selection-toolbar-btn--copied');
+        btn.querySelector('svg').nextSibling.textContent = ' Copy';
+      }, 1500);
+    });
+
+    tb.querySelector('[data-action="claude"]').addEventListener('click', (e) => {
+      e.stopPropagation();
+      const text = window.getSelection().toString().trim();
+      if (!text) return;
+      navigator.clipboard.writeText(`Explain this from my flashcard: "${text}"`);
+      window.open('https://claude.ai/new', '_blank');
+      hideToolbar();
+    });
+
+    document.body.appendChild(tb);
+    selToolbar = tb;
+    return tb;
+  }
+
+  function showToolbar(rect) {
+    const tb = getOrCreateToolbar();
+    tb.classList.add('selection-toolbar--visible');
+    // Position below the selection, centered
+    const tbWidth = 200;
+    let left = rect.left + rect.width / 2 - tbWidth / 2;
+    let top = rect.bottom + 8;
+    // Clamp to viewport
+    left = Math.max(8, Math.min(left, window.innerWidth - tbWidth - 8));
+    if (top + 50 > window.innerHeight) {
+      top = rect.top - 50;
+    }
+    tb.style.left = `${left}px`;
+    tb.style.top = `${top}px`;
+  }
+
+  function hideToolbar() {
+    if (selToolbar) {
+      selToolbar.classList.remove('selection-toolbar--visible');
+    }
+  }
+
+  document.addEventListener('selectionchange', () => {
+    const sel = window.getSelection();
+    if (!sel || !sel.rangeCount || sel.toString().trim().length === 0) {
+      hideToolbar();
+      return;
+    }
+    // Check if selection is inside a .card-answer
+    const anchor = sel.anchorNode;
+    const answerEl = anchor && (anchor.nodeType === 3 ? anchor.parentElement : anchor).closest('.card-answer');
+    if (!answerEl) {
+      hideToolbar();
+      return;
+    }
+    const range = sel.getRangeAt(0);
+    const rect = range.getBoundingClientRect();
+    if (rect.width === 0 && rect.height === 0) return;
+    showToolbar(rect);
+  });
+
+  // Hide toolbar when tapping outside
+  document.addEventListener('mousedown', (e) => {
+    if (selToolbar && !selToolbar.contains(e.target)) {
+      setTimeout(hideToolbar, 50);
+    }
+  });
+  document.addEventListener('touchstart', (e) => {
+    if (selToolbar && !selToolbar.contains(e.target)) {
+      setTimeout(hideToolbar, 50);
+    }
+  });
 
   return {
     loadData,

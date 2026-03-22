@@ -853,6 +853,68 @@ body.card-expanded-active .feed-content {
   text-align: center;
 }
 
+/* Selection toolbar */
+.selection-toolbar {
+  position: fixed;
+  z-index: 1100;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(45, 36, 40, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  pointer-events: none;
+}
+
+.selection-toolbar--visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.selection-toolbar-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.selection-toolbar-btn:active {
+  background: rgba(255,255,255,0.1);
+  color: var(--text-primary);
+}
+
+.selection-toolbar-btn svg {
+  flex-shrink: 0;
+}
+
+.selection-toolbar-btn--copied {
+  color: var(--green, #00B894);
+}
+
+.card-answer {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
 .card-note {
   margin-top: var(--space-md);
   padding: var(--space-sm) var(--space-md);
