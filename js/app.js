@@ -151,44 +151,6 @@ const App = (() => {
     }
   }
 
-  // --- Celebrations ---
-  function celebrateSave(card) {
-    const stack = document.querySelector('.card-stack');
-    if (!stack) return;
-
-    const category = Cards.getCategoryById(card.category);
-    const colors = category ? category.accentGradient : ['#FF6B6B', '#FDCB6E'];
-
-    // Radial pulse
-    const pulse = document.createElement('div');
-    pulse.className = 'save-pulse';
-    pulse.style.background = `radial-gradient(circle, ${colors[0]}44 0%, transparent 70%)`;
-    stack.appendChild(pulse);
-    pulse.addEventListener('animationend', () => pulse.remove());
-
-    // Milestone text
-    const savedCount = Cards.getSavedCards().length;
-    let milestoneText = null;
-
-    if (savedCount % 10 === 0 && savedCount > 0) {
-      milestoneText = `${savedCount} saved`;
-    } else {
-      // Check if first card in this category
-      const savedInCat = Cards.getSavedCards().filter(c => c.category === card.category);
-      if (savedInCat.length === 1) {
-        milestoneText = `First ${category ? category.name : ''} card!`;
-      }
-    }
-
-    if (milestoneText) {
-      const text = document.createElement('div');
-      text.className = 'save-milestone';
-      text.textContent = milestoneText;
-      stack.appendChild(text);
-      text.addEventListener('animationend', () => text.remove());
-    }
-  }
-
   // --- Feed ---
   let lastSwipedCard = null;
   let lastSwipeAction = null; // 'save' or 'dismiss'
@@ -290,7 +252,6 @@ const App = (() => {
         lastSwipedCard = current;
         lastSwipeAction = 'save';
         Cards.saveCard(current.id);
-        celebrateSave(current);
         Cards.advanceQueue();
         renderCurrentCards();
         showUndo();
