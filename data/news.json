@@ -1,132 +1,132 @@
 [
   {
-    "title": "Cursor's New Coding Model Was Secretly Built on Chinese AI Kimi",
-    "summary": "Cursor, the popular AI coding editor, has admitted its newest coding model was built on top of Kimi, a model from China's Moonshot AI — a fact it didn't disclose upfront. This raises questions about transparency and supply-chain trust for developers who rely on Cursor daily. Given current US-China tech tensions, the revelation is sparking debate about where the AI powering your dev tools actually comes from.",
+    "title": "Microsoft Says Copilot Is 'For Entertainment Purposes Only' in Its Own Terms of Service",
+    "summary": "Microsoft's terms of service quietly classify Copilot as entertainment, not a reliable tool — a surprising admission for a product deeply embedded in professional workflows. This highlights a growing tension: AI companies heavily market their tools for serious work while legally distancing themselves from the consequences of errors. For designers and developers using Copilot daily, it's a useful reminder to stay critical of AI outputs.",
     "source": "TechCrunch",
-    "url": "https://techcrunch.com/2026/03/22/cursor-admits-its-new-coding-model-was-built-on-top-of-moonshot-ais-kimi/",
-    "date": "2026-03-22",
+    "url": "https://techcrunch.com/2026/04/05/copilot-is-for-entertainment-purposes-only-according-to-microsofts-terms-of-service/",
+    "date": "2026-04-05",
     "tags": [
-      "coding",
-      "cursor",
-      "models"
+      "copilot",
+      "ai-policy",
+      "tools"
     ],
-    "id": "news-2026-03-23-001"
+    "id": "news-2026-04-06-001"
   },
   {
-    "title": "OpenAI Is Building a Fully Automated AI Researcher",
-    "summary": "OpenAI has announced a major strategic shift: its new grand challenge is building a fully autonomous AI research agent capable of tackling large, complex scientific problems without human guidance. Think of it as an AI that can run entire research projects end-to-end, not just answer questions. If it works, this could dramatically accelerate everything from drug discovery to product design research.",
-    "source": "MIT Tech Review",
-    "url": "https://www.technologyreview.com/2026/03/20/1134438/openai-is-throwing-everything-into-building-a-fully-automated-researcher/",
-    "date": "2026-03-20",
-    "tags": [
-      "openai",
-      "models",
-      "research"
-    ],
-    "id": "news-2026-03-23-002"
-  },
-  {
-    "title": "Hands-On with Gemini's New App Automation: Slow, Clunky, But Impressive",
-    "summary": "Google's Gemini can now take control of apps on your behalf — booking Ubers or ordering food without you lifting a finger. A hands-on test on Pixel 10 Pro and Galaxy S26 Ultra found the experience rough around the edges but genuinely promising as a glimpse of AI agents in everyday life. For product designers, this is a live preview of how AI will reshape UI and user flows.",
+    "title": "Anthropic Effectively Bans OpenClaw from Using Claude Subscriptions",
+    "summary": "Anthropic has changed its policy so that Claude Code subscribers can no longer use their subscription allowance with OpenClaw, a popular third-party agentic coding tool — users must now pay extra. This signals Anthropic tightening control over how Claude is accessed through third-party wrappers, which could reshape the ecosystem of tools built on top of Claude. Developers who've integrated Claude into their workflows via OpenClaw will need to rethink their setup.",
     "source": "The Verge",
-    "url": "https://www.theverge.com/tech/898282/gemini-task-automation-uber-doordash-hands-on",
-    "date": "2026-03-20",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/907074/anthropic-openclaw-claude-subscription-ban",
+    "date": "2026-04-03",
     "tags": [
-      "design-tools",
-      "models",
-      "research"
-    ],
-    "id": "news-2026-03-23-003"
-  },
-  {
-    "title": "Google Search Is Replacing News Headlines with AI-Generated Ones",
-    "summary": "Google has started swapping out original news headlines in search results with AI-generated alternatives, a move that's raising alarms about editorial control and information accuracy. This breaks a long-standing trust contract between publishers and the world's most-used search engine. For designers and product thinkers, it's a striking case study in how AI can quietly reshape information hierarchies.",
-    "source": "The Verge",
-    "url": "https://www.theverge.com/tech/896490/google-replace-news-headlines-in-search-canary-coal-mine-experiment",
-    "date": "2026-03-20",
-    "tags": [
-      "openai",
-      "research",
+      "anthropic",
+      "claude",
       "coding"
     ],
-    "id": "news-2026-03-23-004"
+    "id": "news-2026-04-06-002"
   },
   {
-    "title": "Microsoft Is Quietly Rolling Back Copilot's Presence in Windows",
-    "summary": "Microsoft is dialing back Copilot integrations across several Windows apps, including Photos, Notepad, and Widgets — a sign that the aggressive AI-everywhere push may have gone too far. It's a rare public course-correction from one of the biggest AI adopters, suggesting user friction and bloat complaints are being heard. For designers, it's a real-world lesson in the cost of over-embedding AI into existing products.",
-    "source": "TechCrunch",
-    "url": "https://techcrunch.com/2026/03/20/microsoft-rolls-back-some-of-its-copilot-ai-bloat-on-windows/",
-    "date": "2026-03-20",
+    "title": "OpenClaw Had a Major Security Flaw That Let Attackers Gain Admin Access",
+    "summary": "The popular AI agentic coding tool OpenClaw had a critical vulnerability that allowed attackers to silently gain unauthenticated admin access to users' machines. This is a significant red flag for developers relying on agentic AI tools that have deep system access. It underscores why security vetting matters just as much as capability when choosing AI-powered dev tools.",
+    "source": "Ars Technica",
+    "url": "https://arstechnica.com/security/2026/04/heres-why-its-prudent-for-openclaw-users-to-assume-compromise/",
+    "date": "2026-04-03",
     "tags": [
-      "design-tools",
       "coding",
-      "models"
+      "security",
+      "ai-tools"
     ],
-    "id": "news-2026-03-23-005"
+    "id": "news-2026-04-06-003"
   },
   {
-    "title": "Inside Amazon's Trainium Chip Lab — The Hardware Powering Anthropic, OpenAI, and Apple",
-    "summary": "Amazon gave TechCrunch a rare look inside its Trainium chip lab, the custom AI silicon at the center of its $50 billion OpenAI deal and partnerships with Anthropic and Apple. Custom chips are becoming a critical competitive battleground as AI compute costs soar. Understanding who controls the hardware increasingly means understanding who shapes the future of AI.",
+    "title": "Anthropic Acquires Biotech Startup Coefficient Bio for $400 Million",
+    "summary": "Anthropic has bought stealth biotech AI startup Coefficient Bio in a $400 million stock deal, marking a major move beyond language models into life sciences. This suggests Anthropic is positioning Claude's capabilities for specialized scientific domains, not just general-purpose use. It's a sign that leading AI labs are increasingly pursuing vertical integration into high-stakes industries.",
     "source": "TechCrunch",
-    "url": "https://techcrunch.com/2026/03/22/an-exclusive-tour-of-amazons-trainium-lab-the-chip-thats-won-over-anthropic-openai-even-apple/",
-    "date": "2026-03-22",
+    "url": "https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/",
+    "date": "2026-04-03",
+    "tags": [
+      "anthropic",
+      "models",
+      "ai-industry"
+    ],
+    "id": "news-2026-04-06-004"
+  },
+  {
+    "title": "AI Benchmarks Are Broken — Here's What Should Replace Them",
+    "summary": "MIT Technology Review argues that the standard way of evaluating AI — pitting models against humans on isolated tasks — is fundamentally flawed and no longer reflects how AI is actually used. As models plateau on traditional benchmarks, new evaluation frameworks are needed that measure real-world usefulness, collaboration, and reliability. For anyone choosing AI tools for their work, this is a helpful lens for thinking critically about model comparisons.",
+    "source": "MIT Tech Review",
+    "url": "https://www.technologyreview.com/2026/03/31/1134833/ai-benchmarks-are-broken-heres-what-we-need-instead/",
+    "date": "2026-03-31",
     "tags": [
       "research",
       "models",
-      "openai"
+      "ai-industry"
     ],
-    "id": "news-2026-03-23-006"
+    "id": "news-2026-04-06-005"
   },
   {
-    "title": "AI Was All Over GDC 2026 — But Barely in the Actual Games",
-    "summary": "At this year's Game Developers Conference, AI tools were pitched relentlessly for building NPCs, generating worlds, and even coding entire games — but the finished games on the show floor largely felt like business as usual. The gap between vendor hype and real shipped products is striking, and mirrors broader tensions in design and product development. It's a useful reality check on where generative AI tools actually stand in creative workflows today.",
+    "title": "Gemini in Google Maps Actually Makes Trip Planning Better",
+    "summary": "A hands-on look at Google Maps' new Gemini integration finds it surprisingly useful for planning days out — suggesting itineraries, surfacing relevant places, and answering conversational questions about locations. Unlike Gemini's sometimes clunky presence in Gmail, this use case feels genuinely natural and well-suited to how people actually use Maps. It's a good example of AI integration that enhances a product rather than just being bolted on.",
     "source": "The Verge",
-    "url": "https://www.theverge.com/games/897982/gdc-2026-ai-game-developer-conference",
-    "date": "2026-03-20",
+    "url": "https://www.theverge.com/tech/907015/gemini-google-maps-hands-on",
+    "date": "2026-04-03",
     "tags": [
-      "design-tools",
-      "research",
-      "models"
+      "gemini",
+      "ai-tools",
+      "design"
     ],
-    "id": "news-2026-03-23-007"
+    "id": "news-2026-04-06-006"
   },
   {
-    "title": "Game Developer Apologizes for Accidentally Shipping AI Art in Crimson Desert",
-    "summary": "The developer behind Crimson Desert admitted that AI-generated assets made it into the final release despite intentions to replace them before launch. The backlash highlights how AI-generated work is becoming a live quality-control and trust issue in creative industries. For designers, it's a cautionary tale about AI assets in production pipelines and the reputational risk they carry.",
+    "title": "Proving Your Creative Work Is Human-Made Is Getting Harder",
+    "summary": "As generative AI gets better at mimicking human creativity, artists, writers, and designers are increasingly facing accusations that their original work is AI-generated. This piece explores the emerging challenge of credentialing human authorship — and the platforms and tools trying to solve it. For product designers, it raises real questions about how to protect and communicate the authenticity of their work.",
     "source": "The Verge",
-    "url": "https://www.theverge.com/games/898771/crimson-desert-dev-apologizes-ai-art",
-    "date": "2026-03-23",
+    "url": "https://www.theverge.com/tech/906453/human-made-ai-free-logo-creative-content",
+    "date": "2026-04-04",
     "tags": [
-      "design-tools",
-      "research",
-      "models"
+      "design",
+      "ai-policy",
+      "creative-tools"
     ],
-    "id": "news-2026-03-23-008"
+    "id": "news-2026-04-06-007"
   },
   {
-    "title": "Trump Administration Moves to Block States from Regulating AI",
-    "summary": "The White House released a new AI policy framework that discourages most federal regulation and explicitly seeks to prevent individual states from setting their own AI rules. The plan prioritizes US global AI dominance over consumer protections, with the exception of some child safety guardrails. This has major implications for how AI products are built and governed in the US market going forward.",
+    "title": "AI Health Tools Are Booming — But Do They Actually Work?",
+    "summary": "Microsoft, Amazon, and OpenAI have all launched medical AI tools in recent months, but a closer look reveals significant gaps in evidence for their real-world effectiveness. The article examines how quickly these products are being deployed despite limited clinical validation. For anyone watching AI move into high-stakes domains, this is a useful reality check on the gap between marketing and proven outcomes.",
+    "source": "MIT Tech Review",
+    "url": "https://www.technologyreview.com/2026/03/30/1134795/there-are-more-ai-health-tools-than-ever-but-how-well-do-they-work/",
+    "date": "2026-03-30",
+    "tags": [
+      "ai-tools",
+      "ai-policy",
+      "ai-industry"
+    ],
+    "id": "news-2026-04-06-008"
+  },
+  {
+    "title": "Granola's AI Note-Taking App Makes Your Notes Public by Default — And Uses Them for Training",
+    "summary": "Popular AI meeting notes app Granola quietly makes notes viewable to anyone with a link and uses them for internal AI training unless users manually opt out — despite claiming notes are private by default. This is a critical heads-up for designers and product teams who may be capturing sensitive client or project discussions in the app. It's another reminder to audit privacy settings on any AI tool that touches your work.",
     "source": "The Verge",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/898055/trump-new-ai-policy-framework",
-    "date": "2026-03-20",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/906253/granola-note-links-ai-training-psa",
+    "date": "2026-04-03",
     "tags": [
-      "research",
-      "openai",
-      "models"
+      "ai-tools",
+      "privacy",
+      "ai-policy"
     ],
-    "id": "news-2026-03-23-009"
+    "id": "news-2026-04-06-009"
   },
   {
-    "title": "Are AI Tokens Becoming the New Engineer Signing Bonus?",
-    "summary": "Companies are increasingly offering AI token credits as part of compensation packages for engineers, framing access to powerful AI tools as a perk alongside salary and equity. But some engineers argue this is just normalizing a cost of doing business rather than offering real additional value. It's an early signal of how AI is starting to reshape not just how developers work, but how they're compensated.",
-    "source": "TechCrunch",
-    "url": "https://techcrunch.com/2026/03/21/are-ai-tokens-the-new-signing-bonus-or-just-a-cost-of-doing-business/",
-    "date": "2026-03-22",
+    "title": "Utah Is Letting an AI System Prescribe Psychiatric Drugs Without a Doctor",
+    "summary": "Utah has become only the second US state to grant a clinical AI system the authority to prescribe psychiatric medication without direct physician involvement, aiming to address healthcare shortages and reduce costs. Doctors are raising serious concerns about transparency and safety, while officials see it as a necessary experiment. It's one of the most consequential real-world deployments of AI decision-making authority to date, and a preview of debates that will intensify across many industries.",
+    "source": "The Verge",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/906525/ai-chatbot-prescribe-refill-psychiatric-drugs",
+    "date": "2026-04-03",
     "tags": [
-      "coding",
-      "research",
-      "models"
+      "ai-policy",
+      "ai-industry",
+      "research"
     ],
-    "id": "news-2026-03-23-010"
+    "id": "news-2026-04-06-010"
   }
 ]
