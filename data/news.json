@@ -1,132 +1,132 @@
 [
   {
-    "title": "Microsoft Says Copilot Is 'For Entertainment Purposes Only' in Its Own Terms of Service",
-    "summary": "Microsoft's terms of service quietly classify Copilot as entertainment, not a reliable tool — a surprising admission for a product deeply embedded in professional workflows. This highlights a growing tension: AI companies heavily market their tools for serious work while legally distancing themselves from the consequences of errors. For designers and developers using Copilot daily, it's a useful reminder to stay critical of AI outputs.",
-    "source": "TechCrunch",
-    "url": "https://techcrunch.com/2026/04/05/copilot-is-for-entertainment-purposes-only-according-to-microsofts-terms-of-service/",
-    "date": "2026-04-05",
+    "title": "The AI Coding Wars Are Heating Up",
+    "summary": "OpenAI, Google, and Anthropic are locked in an intensifying battle to become the go-to AI coding tool, with 'vibe coding' — using AI to generate entire apps through natural language — going mainstream. The competition is reshaping how developers and non-developers alike write software. For designers and product builders, this means increasingly powerful tools to prototype and ship without deep coding knowledge.",
+    "source": "The Verge",
+    "url": "https://www.theverge.com/column/910019/ai-coding-wars-openai-google-anthropic",
+    "date": "2026-04-10",
     "tags": [
-      "copilot",
-      "ai-policy",
-      "tools"
+      "coding",
+      "openai",
+      "anthropic"
     ],
-    "id": "news-2026-04-06-001"
+    "id": "news-2026-04-13-001"
   },
   {
-    "title": "Anthropic Effectively Bans OpenClaw from Using Claude Subscriptions",
-    "summary": "Anthropic has changed its policy so that Claude Code subscribers can no longer use their subscription allowance with OpenClaw, a popular third-party agentic coding tool — users must now pay extra. This signals Anthropic tightening control over how Claude is accessed through third-party wrappers, which could reshape the ecosystem of tools built on top of Claude. Developers who've integrated Claude into their workflows via OpenClaw will need to rethink their setup.",
-    "source": "The Verge",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/907074/anthropic-openclaw-claude-subscription-ban",
-    "date": "2026-04-03",
+    "title": "Claude Is the Talk of the Industry at HumanX Conference",
+    "summary": "At San Francisco's major AI conference HumanX, Anthropic's Claude model dominated conversations among developers and enterprise users, overshadowing competitors. The buzz signals that Claude has cemented itself as a serious rival to ChatGPT for practical, professional AI use. For designers and product teams evaluating AI tools, Claude's rising status is worth paying attention to.",
+    "source": "TechCrunch",
+    "url": "https://techcrunch.com/2026/04/12/at-the-humanx-conference-everyone-was-talking-about-claude/",
+    "date": "2026-04-12",
     "tags": [
       "anthropic",
-      "claude",
-      "coding"
+      "models",
+      "industry-trends"
     ],
-    "id": "news-2026-04-06-002"
+    "id": "news-2026-04-13-002"
   },
   {
-    "title": "OpenClaw Had a Major Security Flaw That Let Attackers Gain Admin Access",
-    "summary": "The popular AI agentic coding tool OpenClaw had a critical vulnerability that allowed attackers to silently gain unauthenticated admin access to users' machines. This is a significant red flag for developers relying on agentic AI tools that have deep system access. It underscores why security vetting matters just as much as capability when choosing AI-powered dev tools.",
+    "title": "Trump Officials Reportedly Pushing Banks to Test Anthropic's New 'Mythos' Model",
+    "summary": "U.S. government officials are reportedly encouraging major banks to pilot Anthropic's newly revealed Mythos model, a surprising move given the Department of Defense recently flagged Anthropic as a supply-chain risk. The contradiction highlights the mixed signals around AI governance and which models are considered safe for high-stakes use. It also hints that Mythos may be a specialized model targeting regulated industries.",
+    "source": "TechCrunch",
+    "url": "https://techcrunch.com/2026/04/12/trump-officials-may-be-encouraging-banks-to-test-anthropics-mythos-model/",
+    "date": "2026-04-12",
+    "tags": [
+      "anthropic",
+      "models",
+      "industry-trends"
+    ],
+    "id": "news-2026-04-13-003"
+  },
+  {
+    "title": "Stanford's 2026 AI Index: Charts That Cut Through the Hype",
+    "summary": "Stanford's annual AI Index report is out, offering a data-driven snapshot of where AI actually stands — from capabilities and adoption rates to economic impact and safety concerns. It's one of the most reliable ways to separate real progress from marketing noise. If you want a grounded view of AI's trajectory heading into the second half of the decade, this is essential reading.",
+    "source": "MIT Tech Review",
+    "url": "https://www.technologyreview.com/2026/04/13/1135675/want-to-understand-the-current-state-of-ai-check-out-these-charts/",
+    "date": "2026-04-13",
+    "tags": [
+      "research",
+      "industry-trends",
+      "models"
+    ],
+    "id": "news-2026-04-13-004"
+  },
+  {
+    "title": "Mark Zuckerberg Is Building an AI Clone of Himself for Employee Meetings",
+    "summary": "Meta is reportedly training an AI avatar on Zuckerberg's voice, image, mannerisms, and public statements so it can stand in for him in meetings and provide feedback to employees. It's a striking real-world test of AI-powered digital twins at the executive level. The experiment raises fascinating questions about identity, leadership, and how AI avatars might reshape workplace communication.",
+    "source": "The Verge",
+    "url": "https://www.theverge.com/tech/910990/meta-ceo-mark-zuckerberg-ai-clone",
+    "date": "2026-04-13",
+    "tags": [
+      "industry-trends",
+      "design-tools",
+      "models"
+    ],
+    "id": "news-2026-04-13-005"
+  },
+  {
+    "title": "Gen Z Has a Love-Hate Relationship with AI",
+    "summary": "A new Gallup survey of nearly 1,600 people ages 14–29 finds that Gen Z's enthusiasm for AI is fading even as they continue to rely on it daily for school and work. The disillusionment likely reflects AI's increasing ubiquity and its uneven quality — it's everywhere, but not always good. For product designers, this tension is a critical signal when designing AI-powered experiences for younger users.",
+    "source": "The Verge",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/909687/gen-z-doesnt-like-ai-gallup",
+    "date": "2026-04-10",
+    "tags": [
+      "industry-trends",
+      "research",
+      "ux"
+    ],
+    "id": "news-2026-04-13-006"
+  },
+  {
+    "title": "Stalking Victim Sues OpenAI, Alleging ChatGPT Enabled Her Abuser",
+    "summary": "A new lawsuit claims OpenAI ignored at least three warnings — including its own internal mass-casualty flag — while a ChatGPT user used the tool to fuel a stalking and harassment campaign against his ex-girlfriend. The case is a serious test of AI companies' responsibility when their tools are used to cause real harm. It's likely to accelerate scrutiny around AI safety guardrails and accountability.",
+    "source": "TechCrunch",
+    "url": "https://techcrunch.com/2026/04/10/stalking-victim-sues-openai-claims-chatgpt-fueled-her-abusers-delusions-and-ignored-her-warnings/",
+    "date": "2026-04-10",
+    "tags": [
+      "openai",
+      "safety",
+      "industry-trends"
+    ],
+    "id": "news-2026-04-13-007"
+  },
+  {
+    "title": "AI-Generated Lego War Videos Go Viral — and Reveal AI's Propaganda Power",
+    "summary": "An Iranian content group called Explosive Media has produced a stream of AI-generated Lego-style videos about the US-Iran conflict that have gone massively viral, outperforming official White House communications. The videos are a vivid demonstration of how accessible AI video tools can be weaponized for narrative warfare. It's a wake-up call for anyone thinking about AI-generated media, authenticity, and influence at scale.",
+    "source": "The Verge",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/909948/explosive-media-lego-iran-war-trump-netanyahu",
+    "date": "2026-04-10",
+    "tags": [
+      "industry-trends",
+      "design-tools",
+      "research"
+    ],
+    "id": "news-2026-04-13-008"
+  },
+  {
+    "title": "OpenClaw Security Flaw Gave Attackers Silent Admin Access",
+    "summary": "The viral AI agentic tool OpenClaw had a critical security vulnerability that allowed unauthenticated attackers to silently gain admin access to users' systems. The flaw — discovered shortly after Anthropic also temporarily banned OpenClaw's creator — is a stark reminder that fast-moving AI tools can carry serious security risks. Designers and developers using agentic AI tools should scrutinize their security posture carefully.",
     "source": "Ars Technica",
     "url": "https://arstechnica.com/security/2026/04/heres-why-its-prudent-for-openclaw-users-to-assume-compromise/",
     "date": "2026-04-03",
     "tags": [
       "coding",
-      "security",
-      "ai-tools"
+      "safety",
+      "industry-trends"
     ],
-    "id": "news-2026-04-06-003"
+    "id": "news-2026-04-13-009"
   },
   {
-    "title": "Anthropic Acquires Biotech Startup Coefficient Bio for $400 Million",
-    "summary": "Anthropic has bought stealth biotech AI startup Coefficient Bio in a $400 million stock deal, marking a major move beyond language models into life sciences. This suggests Anthropic is positioning Claude's capabilities for specialized scientific domains, not just general-purpose use. It's a sign that leading AI labs are increasingly pursuing vertical integration into high-stakes industries.",
-    "source": "TechCrunch",
-    "url": "https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/",
-    "date": "2026-04-03",
-    "tags": [
-      "anthropic",
-      "models",
-      "ai-industry"
-    ],
-    "id": "news-2026-04-06-004"
-  },
-  {
-    "title": "AI Benchmarks Are Broken — Here's What Should Replace Them",
-    "summary": "MIT Technology Review argues that the standard way of evaluating AI — pitting models against humans on isolated tasks — is fundamentally flawed and no longer reflects how AI is actually used. As models plateau on traditional benchmarks, new evaluation frameworks are needed that measure real-world usefulness, collaboration, and reliability. For anyone choosing AI tools for their work, this is a helpful lens for thinking critically about model comparisons.",
-    "source": "MIT Tech Review",
-    "url": "https://www.technologyreview.com/2026/03/31/1134833/ai-benchmarks-are-broken-heres-what-we-need-instead/",
-    "date": "2026-03-31",
-    "tags": [
-      "research",
-      "models",
-      "ai-industry"
-    ],
-    "id": "news-2026-04-06-005"
-  },
-  {
-    "title": "Gemini in Google Maps Actually Makes Trip Planning Better",
-    "summary": "A hands-on look at Google Maps' new Gemini integration finds it surprisingly useful for planning days out — suggesting itineraries, surfacing relevant places, and answering conversational questions about locations. Unlike Gemini's sometimes clunky presence in Gmail, this use case feels genuinely natural and well-suited to how people actually use Maps. It's a good example of AI integration that enhances a product rather than just being bolted on.",
+    "title": "AI Articles Don't Need AI Art — And The New Yorker's Sam Altman Cover Proves It",
+    "summary": "A Verge essay argues that using AI-generated illustrations for articles about AI is creatively lazy and often unsettling, using The New Yorker's eerie AI-generated portrait of Sam Altman as a prime example. The piece is a thoughtful provocation for designers about when AI art serves a story — and when it undermines it. As AI image tools become default options, the design community needs sharper criteria for when to use them.",
     "source": "The Verge",
-    "url": "https://www.theverge.com/tech/907015/gemini-google-maps-hands-on",
-    "date": "2026-04-03",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/910460/new-yorker-david-szauder-illustration-generative-ai",
+    "date": "2026-04-11",
     "tags": [
-      "gemini",
-      "ai-tools",
-      "design"
+      "design-tools",
+      "industry-trends",
+      "ux"
     ],
-    "id": "news-2026-04-06-006"
-  },
-  {
-    "title": "Proving Your Creative Work Is Human-Made Is Getting Harder",
-    "summary": "As generative AI gets better at mimicking human creativity, artists, writers, and designers are increasingly facing accusations that their original work is AI-generated. This piece explores the emerging challenge of credentialing human authorship — and the platforms and tools trying to solve it. For product designers, it raises real questions about how to protect and communicate the authenticity of their work.",
-    "source": "The Verge",
-    "url": "https://www.theverge.com/tech/906453/human-made-ai-free-logo-creative-content",
-    "date": "2026-04-04",
-    "tags": [
-      "design",
-      "ai-policy",
-      "creative-tools"
-    ],
-    "id": "news-2026-04-06-007"
-  },
-  {
-    "title": "AI Health Tools Are Booming — But Do They Actually Work?",
-    "summary": "Microsoft, Amazon, and OpenAI have all launched medical AI tools in recent months, but a closer look reveals significant gaps in evidence for their real-world effectiveness. The article examines how quickly these products are being deployed despite limited clinical validation. For anyone watching AI move into high-stakes domains, this is a useful reality check on the gap between marketing and proven outcomes.",
-    "source": "MIT Tech Review",
-    "url": "https://www.technologyreview.com/2026/03/30/1134795/there-are-more-ai-health-tools-than-ever-but-how-well-do-they-work/",
-    "date": "2026-03-30",
-    "tags": [
-      "ai-tools",
-      "ai-policy",
-      "ai-industry"
-    ],
-    "id": "news-2026-04-06-008"
-  },
-  {
-    "title": "Granola's AI Note-Taking App Makes Your Notes Public by Default — And Uses Them for Training",
-    "summary": "Popular AI meeting notes app Granola quietly makes notes viewable to anyone with a link and uses them for internal AI training unless users manually opt out — despite claiming notes are private by default. This is a critical heads-up for designers and product teams who may be capturing sensitive client or project discussions in the app. It's another reminder to audit privacy settings on any AI tool that touches your work.",
-    "source": "The Verge",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/906253/granola-note-links-ai-training-psa",
-    "date": "2026-04-03",
-    "tags": [
-      "ai-tools",
-      "privacy",
-      "ai-policy"
-    ],
-    "id": "news-2026-04-06-009"
-  },
-  {
-    "title": "Utah Is Letting an AI System Prescribe Psychiatric Drugs Without a Doctor",
-    "summary": "Utah has become only the second US state to grant a clinical AI system the authority to prescribe psychiatric medication without direct physician involvement, aiming to address healthcare shortages and reduce costs. Doctors are raising serious concerns about transparency and safety, while officials see it as a necessary experiment. It's one of the most consequential real-world deployments of AI decision-making authority to date, and a preview of debates that will intensify across many industries.",
-    "source": "The Verge",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/906525/ai-chatbot-prescribe-refill-psychiatric-drugs",
-    "date": "2026-04-03",
-    "tags": [
-      "ai-policy",
-      "ai-industry",
-      "research"
-    ],
-    "id": "news-2026-04-06-010"
+    "id": "news-2026-04-13-010"
   }
 ]
