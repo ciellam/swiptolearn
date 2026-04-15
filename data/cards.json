@@ -1208,5 +1208,650 @@
     ],
     "difficulty": "intermediate",
     "createdAt": "2026-04-01"
+  },
+  {
+    "id": "ux-021",
+    "category": "ux-product",
+    "type": "vocab",
+    "front": "Fitts's Law",
+    "back": "<h4>Definition</h4><p><strong>Fitts's Law is a predictive model that describes how long it takes to move to and click on a target.</strong> Developed by psychologist Paul Fitts in 1954, it states that the time to reach a target depends on two things: <em>how far away it is</em> and <em>how big it is</em>. The further away or the smaller the target, the longer and harder it is to click.</p><h4>The Core Formula (Plain English)</h4><p>You don't need to memorize the math, but the key insight is:</p><ul><li><strong>Larger targets</strong> = faster to click (easier)</li><li><strong>Closer targets</strong> = faster to click (easier)</li><li><strong>Small targets far away</strong> = slowest and most error-prone</li></ul><div class='diagram'><pre>Easy to click ← - - - - - - - - - → Hard to click\n[  BIG, CLOSE  ]              [ tiny, far away ]</pre></div><h4>Real-World Applications</h4><div class='example-box'><div class='label'>Design decisions guided by Fitts's Law</div><ul><li><strong>Mobile tap targets</strong> — Apple and Google both recommend minimum 44×44px tap areas so fingers can hit them reliably</li><li><strong>Primary CTA buttons</strong> — Make your most important button large and placed near where the user's cursor or thumb naturally rests</li><li><strong>Screen edges and corners</strong> — These are special: you can't overshoot them, so they're effectively infinitely large. That's why macOS puts the menu bar at the top edge of the screen.</li><li><strong>Destructive actions</strong> — Small, far-away delete buttons are actually a <em>feature</em> — harder to hit accidentally</li></ul></div><h4>Why It Matters for Product Designers</h4><p>Fitts's Law explains why a tiny icon in the corner of a card feels frustrating to click, and why a full-width button at the bottom of a mobile screen feels satisfying. It's one of the few UX principles backed by decades of measurable, scientific research. When you're deciding the size and placement of interactive elements, Fitts's Law gives you a defensible, evidence-based argument for your design choices.</p>",
+    "tags": [
+      "ux",
+      "interaction-design",
+      "accessibility",
+      "mobile"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "ux-022",
+    "category": "ux-product",
+    "type": "buzzword",
+    "front": "\"Dogfooding\" — what does it actually mean, and why do product teams use the term?",
+    "back": "<h4>What It Means</h4><p><strong>\"Dogfooding\" (or \"eating your own dog food\") means using the product you build, yourself, as a real user.</strong> The idea is that if you genuinely use your own product day-to-day, you'll discover real problems faster — and have more personal motivation to fix them. The phrase became popular in tech during the 1980s at Microsoft, where an executive challenged his team to use their own software internally before shipping it.</p><h4>Why Teams Do It</h4><ul><li><strong>Catch bugs early</strong> — Issues that users would report get found internally first</li><li><strong>Build empathy</strong> — Developers and PMs experience friction they might otherwise dismiss in a report</li><li><strong>Signal confidence</strong> — It tells customers: \"We trust this product enough to depend on it ourselves\"</li><li><strong>Faster feedback loops</strong> — Internal users can flag problems without a formal support ticket process</li></ul><div class='example-box'><div class='label'>Real example</div><p>Slack is famous for dogfooding — the company ran almost entirely on its own product before public launch. Every team at Slack used Slack to communicate, which meant bugs, confusing flows, and missing features were felt by the people most motivated to fix them. This contributed to how polished the product felt at launch.</p></div><h4>The Limits of Dogfooding</h4><p>Dogfooding has a serious blind spot: <em>your team is not your user.</em> Engineers and designers are power users with high technical literacy. They know the product's quirks and work around them unconsciously. A problem that frustrates a first-time user might never surface internally because the team has already adapted. <strong>Dogfooding is a useful supplement to user research — not a replacement for it.</strong> If a team says \"we dogfood, so we don't need usability testing,\" that's a red flag.</p>",
+    "tags": [
+      "product",
+      "team-culture",
+      "research",
+      "buzzword"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "ux-023",
+    "category": "ux-product",
+    "type": "framework",
+    "front": "The RICE Prioritization Framework",
+    "back": "<h4>What It Is</h4><p><strong>RICE is a scoring framework used to prioritize features, projects, or ideas by calculating a single number for each item.</strong> It was created by Intercom and stands for <strong>R</strong>each, <strong>I</strong>mpact, <strong>C</strong>onfidence, and <strong>E</strong>ffort. Instead of debating priorities based on gut feeling or whoever speaks loudest in the room, RICE forces teams to estimate these four dimensions and let the math guide the decision.</p><h4>The Four Factors</h4><ul><li><strong>Reach</strong> — How many users will this affect in a given time period? (e.g., 500 users per month)</li><li><strong>Impact</strong> — How much will it move the needle per user? (Scored: 3 = massive, 2 = high, 1 = medium, 0.5 = low, 0.25 = minimal)</li><li><strong>Confidence</strong> — How sure are you about your Reach and Impact estimates? (100% = high, 80% = medium, 50% = low)</li><li><strong>Effort</strong> — How many person-months of work is needed? (e.g., 2 = two people working for one month)</li></ul><div class='diagram'><pre>RICE Score = (Reach × Impact × Confidence) ÷ Effort\n\nHigher score = higher priority</pre></div><h4>Worked Example</h4><div class='example-box'><div class='label'>Comparing two features</div><p><strong>Feature A — Onboarding checklist:</strong> Reach: 800/month, Impact: 2, Confidence: 80%, Effort: 2 months → Score = (800 × 2 × 0.8) ÷ 2 = <strong>640</strong></p><p><strong>Feature B — Dark mode:</strong> Reach: 1200/month, Impact: 0.5, Confidence: 50%, Effort: 3 months → Score = (1200 × 0.5 × 0.5) ÷ 3 = <strong>100</strong></p><p>Despite dark mode reaching more users, the onboarding checklist scores 6× higher because it has higher impact per user, more confidence, and less effort.</p></div><h4>Honest Limitations</h4><p>RICE creates an illusion of objectivity. The inputs — especially Reach and Impact — are still estimates and can be inflated by whoever wants their feature to win. Use RICE as a <em>structured conversation tool</em>, not as a final authority. It's most useful for comparing many items at once and forcing your team to articulate assumptions out loud.</p>",
+    "tags": [
+      "prioritization",
+      "product-management",
+      "frameworks",
+      "decision-making"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "ux-024",
+    "category": "ux-product",
+    "type": "vocab",
+    "front": "Hick's Law",
+    "back": "<h4>Definition</h4><p><strong>Hick's Law states that the more choices a person has, the longer it takes them to make a decision.</strong> Formulated by British psychologists William Edmund Hick and Ray Hyman in 1952, it describes a logarithmic relationship: doubling your options doesn't double decision time, but more choices consistently slow users down and increase the chance they'll disengage entirely.</p><h4>Why This Happens Cognitively</h4><p>Every option a user sees must be processed and compared. More options mean more mental work — also called <em>cognitive load</em>. At a certain point, users experience <strong>decision paralysis</strong>: they feel overwhelmed and either make a poor choice or abandon the task. This is sometimes called the <em>paradox of choice</em>.</p><div class='diagram'><pre>2 options  → fast decision\n5 options  → slightly slower\n10 options → noticeably slower\n20+ options → high risk of abandonment or regret</pre></div><h4>Design Applications</h4><div class='example-box'><div class='label'>Hick's Law in practice</div><ul><li><strong>Navigation menus</strong> — Limiting top-level navigation to 5–7 items reduces choice overload. A mega-menu with 40 links overwhelms users even if all links are relevant.</li><li><strong>Pricing pages</strong> — Most SaaS products offer 3 pricing tiers (not 7) because 3 options are fast to compare and the middle option acts as a natural anchor.</li><li><strong>Onboarding</strong> — Showing one clear next step rather than a dashboard full of features helps new users get started. Notion's early onboarding reduced options to guide users to their first \"aha moment\" faster.</li><li><strong>Form design</strong> — Radio buttons with 3 options feel easier than dropdowns with 20 choices, even if the user knows what they want.</li></ul></div><h4>What It Doesn't Mean</h4><p>Hick's Law is not a reason to always minimize features. Expert users often <em>want</em> more options and can navigate complexity efficiently. The law applies most strongly to <strong>infrequent or unfamiliar decisions</strong> — not to power users performing routine tasks. Always design for your actual user's experience level.</p>",
+    "tags": [
+      "ux",
+      "cognitive-psychology",
+      "interaction-design",
+      "fundamentals"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "ux-025",
+    "category": "ux-product",
+    "type": "buzzword",
+    "front": "\"Design Thinking\" — what it actually is vs. how it gets misused in organizations",
+    "back": "<h4>What It Actually Is</h4><p><strong>Design Thinking is a structured, human-centered problem-solving process that starts with deeply understanding users before jumping to solutions.</strong> It was popularized by IDEO and Stanford's d.school and is typically described in five phases: <em>Empathize, Define, Ideate, Prototype, and Test</em>. The core value is that it forces cross-functional teams to slow down, question their assumptions, and stay focused on real human problems rather than assumed solutions.</p><h4>The Five Phases (Simply)</h4><ul><li><strong>Empathize</strong> — Talk to users, observe behavior, build genuine understanding</li><li><strong>Define</strong> — Synthesize what you learned into a clear problem statement</li><li><strong>Ideate</strong> — Generate many possible solutions without judgment</li><li><strong>Prototype</strong> — Build rough, cheap versions of your best ideas</li><li><strong>Test</strong> — Put prototypes in front of real users and learn</li></ul><div class='example-box'><div class='label'>Good use of Design Thinking</div><p>A hospital used Design Thinking to reduce patient anxiety. Instead of assuming the problem was waiting time, they observed and interviewed patients. They discovered the real pain was <em>uncertainty</em> — not knowing what would happen next. The solution wasn't faster care, it was clearer communication: a simple whiteboard in each room showing the patient's schedule for the day. Low cost, high impact.</p></div><h4>How It Gets Misused</h4><p>In many organizations, \"Design Thinking\" has become a <strong>buzzword for post-it note workshops</strong> that produce no real output. Common misuses include: running a single ideation session and calling it design thinking, skipping the Empathize phase entirely because \"we already know our users,\" or using it as a box-ticking exercise to appear innovative without actually changing how decisions are made. <strong>Design Thinking only works if the Empathize phase is taken seriously</strong> — without real user research at the start, the rest of the process is just organized guessing.</p>",
+    "tags": [
+      "design-process",
+      "buzzword",
+      "research",
+      "product-culture"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "ux-026",
+    "category": "ux-product",
+    "type": "framework",
+    "front": "The Jobs-to-Be-Done (JTBD) Forces Diagram",
+    "back": "<h4>What It Is</h4><p><strong>The Forces Diagram is a tool from the Jobs-to-Be-Done framework that maps the four psychological forces that push and pull a user toward or away from switching to a new product.</strong> Developed by Bob Moesta and Chris Spiek, it helps teams understand <em>why</em> users switch — or why they don't — by looking at behavior as a system of competing motivations rather than a list of feature preferences.</p><h4>The Four Forces</h4><div class='diagram'><pre>         PUSH                          PULL\n  (away from current)           (toward new solution)\n  \"This tool is too slow\"       \"That product looks great\"\n         ↓                              ↓\n  ─────────────────── SWITCH ────────────────────\n         ↑                              ↑\n  \"I've invested so much\"       \"What if it's complicated?\"\n    INERTIA (habit)                 ANXIETY\n  (staying with current)        (about new solution)</pre></div><ul><li><strong>Push</strong> — Frustrations with the current solution that motivate change</li><li><strong>Pull</strong> — The appeal and promise of the new solution</li><li><strong>Inertia</strong> — Habits, sunk costs, and comfort with the familiar that resist change</li><li><strong>Anxiety</strong> — Fear and uncertainty about the new solution (\"What if I lose my data? What if it's hard to learn?\")</li></ul><h4>Why It Matters</h4><div class='example-box'><div class='label'>Applying the Forces Diagram to a real product</div><p>A project management tool is trying to win users away from spreadsheets. The <strong>push</strong> is that spreadsheets break down at scale and can't handle dependencies. The <strong>pull</strong> is the promise of automated tracking and clear timelines. But <strong>inertia</strong> is powerful — the whole team already knows Excel, and templates exist. <strong>Anxiety</strong> is about migration: \"Will I lose years of data?\" A smart onboarding strategy would directly address inertia (import your existing spreadsheet in one click) and anxiety (\"We'll migrate your data for free\") rather than just advertising features.</p></div><h4>How to Use It</h4><p>Run customer interviews focused on the moment of switching — or the moment someone considered switching but didn't. Map their language onto the four forces. You'll often find that <strong>inertia and anxiety are far more powerful than teams assume</strong> — and that reducing friction to switch matters more than adding new features to pull users in.</p>",
+    "tags": [
+      "jtbd",
+      "frameworks",
+      "user-research",
+      "product-strategy"
+    ],
+    "difficulty": "advanced",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "ux-027",
+    "category": "ux-product",
+    "type": "vocab",
+    "front": "Scarcity & Urgency in UX",
+    "back": "<h4>Definition</h4><p><strong>Scarcity and urgency are persuasion techniques that use the fear of missing out (FOMO) to motivate users to act faster.</strong> Scarcity signals that something is limited in supply (\"Only 3 left!\"). Urgency signals that time is running out (\"Offer ends in 2 hours\"). Both tap into a psychological bias called <em>loss aversion</em> — humans are more motivated by avoiding a loss than by gaining an equivalent benefit.</p><h4>How They Appear in Products</h4><ul><li><strong>Countdown timers</strong> — Flash sales, limited-time offers (Booking.com, Shopify merchants)</li><li><strong>Low stock indicators</strong> — \"Only 2 left in stock\" on Amazon or retail sites</li><li><strong>Social proof + scarcity</strong> — \"12 people are looking at this right now\" (hotel booking sites)</li><li><strong>Expiring carts</strong> — \"Your cart expires in 15 minutes\" in ticketing platforms</li></ul><div class='example-box'><div class='label'>Honest vs. manipulative use</div><p><strong>Honest:</strong> Airbnb showing that a listing has only 2 nights available in your selected dates — this is real, verifiable scarcity that helps users make informed decisions.<br><br><strong>Manipulative (dark pattern):</strong> A fake countdown timer that resets every time you visit the page, or a \"Only 3 left!\" label that is always showing regardless of actual stock. This is called a <em>false urgency dark pattern</em> and erodes trust when users notice it.</p></div><h4>The Designer's Responsibility</h4><p>Scarcity and urgency are powerful tools that can significantly increase conversion rates in the short term. However, <strong>manufactured urgency that isn't true destroys trust</strong> when users catch on — and they often do. As a designer, it's important to distinguish between <em>communicating real constraints clearly</em> (ethical and helpful) and <em>fabricating pressure to manipulate behavior</em> (a dark pattern). The FTC and EU regulators have increasingly penalized fake urgency tactics, making this not just an ethics question but a legal one.</p>",
+    "tags": [
+      "persuasion",
+      "dark-patterns",
+      "ethics",
+      "conversion"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "ux-028",
+    "category": "ux-product",
+    "type": "framework",
+    "front": "The Fogg Behavior Model (BJ Fogg)",
+    "back": "<h4>What It Is</h4><p><strong>The Fogg Behavior Model states that a behavior happens only when three elements are present at the same time: Motivation, Ability, and a Prompt (trigger).</strong> Created by Stanford researcher BJ Fogg, the model is written as <em>B = MAP</em>. If any one of these three is missing or too weak, the behavior won't occur — even if the other two are strong.</p><h4>The Three Elements</h4><ul><li><strong>Motivation</strong> — Does the user want to do this? Motivations include pleasure/pain, hope/fear, and social acceptance/rejection. Motivation can be high or low, but it fluctuates and is hard to control.</li><li><strong>Ability</strong> — How easy is it to do? Ability is affected by time, money, mental effort, physical effort, and whether the behavior fits the user's routine. <em>Simpler = more ability.</em></li><li><strong>Prompt</strong> — Something that calls attention and says \"do this now.\" Without a prompt, even highly motivated, highly capable users won't act. Prompts can be external (a notification) or internal (a habit cue).</li></ul><div class='diagram'><pre>HIGH  │  Motivated but hard     │  ★ Behavior happens here\n      │  → behavior unlikely    │  (high motivation + easy + prompt)\n MOTI-│─────────────────────────┼──────────────────────────────\nVATION│  Low motivation + hard  │  Easy but unmotivated\n      │  → behavior won't happen│  → needs strong prompt\nLOW   └─────────────────────────┴──────────────────────────────\n             LOW ABILITY                HIGH ABILITY (Easy)</pre></div><h4>Design Applications</h4><div class='example-box'><div class='label'>Using B=MAP to diagnose a product problem</div><p>A fitness app's users aren't logging their meals. Why? Using Fogg's model: <strong>Motivation</strong> may be present (they signed up!), but <strong>Ability</strong> is low — logging a meal takes too many taps and requires looking up food items. And the <strong>Prompt</strong> is missing — there's no reminder at meal times. Solution: reduce logging to a one-tap estimate, and add a lunchtime push notification. All three elements are now aligned.</p></div><h4>Key Insight for Designers</h4><p><strong>BJ Fogg's most important finding is that designers overinvest in motivation and underinvest in ability and prompts.</strong> You cannot reliably motivate users — motivation is internal and unstable. But you <em>can</em> make a behavior dramatically easier (ability) and ensure a clear trigger exists (prompt). This is why the most effective behavioral product changes are usually simplification and better-timed prompts, not more persuasive copy.</p>",
+    "tags": [
+      "behavioral-design",
+      "frameworks",
+      "persuasion",
+      "product-strategy"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "uv-001",
+    "category": "ui-vibe",
+    "type": "visual-dna",
+    "front": "What defines the Neobrutalist UI aesthetic, and how do you describe it precisely?",
+    "back": "<h4>Core Aesthetic Identity</h4><p><strong>Neobrutalism is a digital design movement that deliberately rejects polish in favor of rawness, tension, and expressive imperfection.</strong> It takes cues from 1950s architectural Brutalism — rough concrete, exposed structure, anti-ornamentation — and translates them into interface design through heavy borders, flat solid shadows, and high-contrast color blocking. Unlike its web ancestor (Web Brutalism), Neobrutalism is <em>intentionally styled</em>, not accidentally ugly.</p><h4>Signature Visual Properties</h4><ul><li><strong>Borders:</strong> Thick, solid, black strokes — typically <code>2px–4px solid #000000</code></li><li><strong>Shadows:</strong> Hard offset box-shadows with no blur — e.g., <code>box-shadow: 4px 4px 0px #000000</code></li><li><strong>Color palette:</strong> Loud, saturated fills — think <code>#FAFF00</code> (acid yellow), <code>#FF5C00</code> (construction orange), <code>#B3F5BC</code> (mint green) against white or cream backgrounds (<code>#FFFDF5</code>)</li><li><strong>Typography:</strong> Oversized, unapologetic — often grotesque sans-serifs like <em>Space Grotesk</em> or <em>Archivo Black</em> at 700–900 weight</li><li><strong>Border radius:</strong> Either 0px (hard corners) or exaggeratedly rounded — rarely in between</li></ul><h4>Mood & Personality</h4><p>Neobrutalist UIs feel <strong>confrontational, energetic, and hand-made</strong>. They signal anti-corporate rebellion while remaining highly functional. You'll find this aesthetic in fintech startups (Gumroad, Pika), SaaS landing pages, and creative tools targeting Gen Z audiences who distrust overly polished interfaces.</p><div class='example-box'><div class='label'>Neobrutalist Button — CSS Example</div><code>button {<br>&nbsp;&nbsp;background: #FAFF00;<br>&nbsp;&nbsp;border: 3px solid #000000;<br>&nbsp;&nbsp;box-shadow: 4px 4px 0px #000000;<br>&nbsp;&nbsp;border-radius: 0px;<br>&nbsp;&nbsp;font-family: 'Space Grotesk', sans-serif;<br>&nbsp;&nbsp;font-weight: 700;<br>&nbsp;&nbsp;padding: 12px 24px;<br>}<br>button:hover {<br>&nbsp;&nbsp;transform: translate(2px, 2px);<br>&nbsp;&nbsp;box-shadow: 2px 2px 0px #000000;<br>}</code></div><h4>How to Describe It in Critiques</h4><p>Avoid saying a UI looks \"edgy\" or \"bold.\" Instead say: <em>\"The interface employs a Neobrutalist visual language — characterized by offset hard shadows, unblurred stroke outlines, and saturated chromatic fills that create deliberate visual tension.\"</em></p>",
+    "tags": [
+      "neobrutalism",
+      "visual-dna",
+      "color",
+      "aesthetic-language"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "uv-002",
+    "category": "ui-vibe",
+    "type": "visual-dna",
+    "front": "What is Glassmorphism and what CSS properties create it?",
+    "back": "<h4>Defining the Aesthetic</h4><p><strong>Glassmorphism is a UI style that simulates frosted glass surfaces — translucent, blurred panels that appear to float above a vivid background.</strong> It gained mainstream traction after Apple's macOS Big Sur (2020) and has since become a signature look for dashboards, cards, and modals in products targeting a premium, futuristic audience. The effect communicates <em>depth, layering, and luminosity</em> without heavy shadows or gradients.</p><h4>The Four Pillars of Glassmorphism</h4><ul><li><strong>Background blur:</strong> <code>backdrop-filter: blur(12px–24px)</code> — blurs content <em>behind</em> the element, not the element itself</li><li><strong>Translucency:</strong> <code>background: rgba(255, 255, 255, 0.15)</code> — low-opacity white or tinted fill to let background color bleed through</li><li><strong>Subtle border:</strong> <code>border: 1px solid rgba(255, 255, 255, 0.3)</code> — a semi-transparent white stroke simulates a glass edge catching light</li><li><strong>Vivid backdrop:</strong> The effect <em>only works</em> against colorful, gradient, or photographic backgrounds — it reads as flat gray on white</li></ul><div class='example-box'><div class='label'>Glassmorphic Card — Full CSS</div><code>.glass-card {<br>&nbsp;&nbsp;background: rgba(255, 255, 255, 0.15);<br>&nbsp;&nbsp;backdrop-filter: blur(16px);<br>&nbsp;&nbsp;-webkit-backdrop-filter: blur(16px);<br>&nbsp;&nbsp;border: 1px solid rgba(255, 255, 255, 0.25);<br>&nbsp;&nbsp;border-radius: 16px;<br>&nbsp;&nbsp;box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);<br>}</code></div><h4>Color & Mood</h4><p>Glassmorphism works best with <strong>cool, saturated backdrop gradients</strong> — deep purples (<code>#6C3DE8</code>), electric blues (<code>#0EA5E9</code>), and rose-to-violet transitions. The resulting mood is <em>ethereal, premium, and futuristic</em>. Overuse risks making an interface feel cold or illegible — reserve it for card layers and modals, not body text containers.</p><h4>Accessibility Caution</h4><p>Blurred, semi-transparent backgrounds can severely compromise text contrast. Always verify WCAG AA compliance (<strong>minimum 4.5:1 contrast ratio</strong>) by testing text color against the <em>averaged perceived background color</em>, not just the rgba fill value. A white label on a glass card floating above a dark gradient may pass — the same card on a light background may fail.</p>",
+    "tags": [
+      "glassmorphism",
+      "visual-dna",
+      "css",
+      "depth"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "uv-003",
+    "category": "ui-vibe",
+    "type": "structure",
+    "front": "What is the 8pt Grid System and why do designers use it for UI spacing?",
+    "back": "<h4>The Core Principle</h4><p><strong>The 8pt grid system is a spacing methodology where all layout dimensions, padding, margins, and component sizes are multiples of 8.</strong> This means values like <code>8px, 16px, 24px, 32px, 40px, 48px, 64px</code> are valid — while <code>13px, 22px, or 37px</code> are not. The system creates an invisible rhythm that makes UIs feel <em>cohesive, intentional, and professionally crafted</em> even when the user can't articulate why.</p><h4>Why 8 Specifically?</h4><p>Most screen densities (1x, 1.5x, 2x, 3x) divide evenly into 8, so <strong>8pt values render crisp on all device resolutions</strong> without sub-pixel rendering artifacts. The number 8 also provides enough granularity for fine adjustments (4pt half-steps exist for tight spaces like icon padding) without becoming arbitrary.</p><div class='diagram'>SPACING SCALE — 8pt System\n┌────────────────────────────────────────┐\n│  4px  — Micro: icon internal padding   │\n│  8px  — XS: inline gap, tag padding    │\n│ 16px  — SM: card internal padding      │\n│ 24px  — MD: section spacing, inputs    │\n│ 32px  — LG: component separation       │\n│ 48px  — XL: section breaks             │\n│ 64px  — 2XL: hero/page-level spacing   │\n└────────────────────────────────────────┘</div><h4>Practical Application</h4><ul><li>Button padding: <code>padding: 12px 24px</code> (12 = 8+4 half-step; 24 = 3×8)</li><li>Card padding: <code>padding: 24px</code> or <code>32px</code></li><li>Gap between cards in a grid: <code>gap: 16px</code> or <code>24px</code></li><li>Section vertical spacing: <code>margin-bottom: 64px</code></li></ul><div class='example-box'><div class='label'>Designer Handoff Note</div><em>\"All spacing tokens follow an 8pt base scale. Component-level padding uses 16px or 24px increments. Layout-level spacing uses 48px–64px. No value below 4px or outside this scale should be used without design system approval.\"</em></div><h4>How It Affects the Vibe</h4><p>Interfaces built on an 8pt grid feel <strong>balanced and breathable</strong>. Inconsistent spacing — even by just 2–3px — introduces a subtle visual anxiety that users register as \"something feels off\" without knowing why. The 8pt grid is the skeleton that makes a layout feel <em>resolved</em>.</p>",
+    "tags": [
+      "8pt-grid",
+      "spacing",
+      "layout",
+      "structure"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "uv-004",
+    "category": "ui-vibe",
+    "type": "typography",
+    "front": "How do you create a strong typographic hierarchy, and what specific values define it?",
+    "back": "<h4>What Is Typographic Hierarchy?</h4><p><strong>Typographic hierarchy is the visual system that guides a reader's eye through content in order of importance.</strong> It's established through deliberate variation in font size, weight, color, and spacing — not arbitrary styling. A well-executed hierarchy communicates structure before the user reads a single word. In design critiques, weak hierarchy is often described as content that feels \"flat\" or \"undifferentiated.\"</p><h4>The Five Levers of Hierarchy</h4><ul><li><strong>Size:</strong> The primary lever — jump between levels should be meaningful. A 2px size difference reads as a mistake; a 6–8px difference reads as intentional hierarchy.</li><li><strong>Weight:</strong> Use a font with a full weight scale (300, 400, 500, 600, 700, 800). Pair a heavy heading weight (700–800) with a regular body weight (400) for maximum contrast.</li><li><strong>Color:</strong> Darken important text (<code>#111827</code>), mute secondary text (<code>#6B7280</code>), and wash out tertiary text (<code>#9CA3AF</code>).</li><li><strong>Line height:</strong> Headings: <code>line-height: 1.1–1.2</code>. Body: <code>line-height: 1.5–1.7</code>. Tighter line height on large type feels deliberate; loose line height on large type feels amateurish.</li><li><strong>Letter spacing:</strong> Uppercase labels and captions: <code>letter-spacing: 0.08em–0.12em</code>. Headings: <code>letter-spacing: -0.02em</code> (tight tracking on large type reads as polished).</li></ul><div class='example-box'><div class='label'>A Professional 4-Level Type Scale (Inter)</div><code>/* H1 — Page Title */<br>font-size: 48px; font-weight: 800;<br>line-height: 1.1; letter-spacing: -0.03em; color: #111827;<br><br>/* H2 — Section Header */<br>font-size: 32px; font-weight: 700;<br>line-height: 1.2; letter-spacing: -0.02em; color: #111827;<br><br>/* Body — Default prose */<br>font-size: 16px; font-weight: 400;<br>line-height: 1.65; letter-spacing: 0; color: #374151;<br><br>/* Caption / Label */<br>font-size: 12px; font-weight: 500;<br>line-height: 1.4; letter-spacing: 0.06em;<br>text-transform: uppercase; color: #9CA3AF;</code></div><h4>Common Mistakes</h4><p>Designers new to typography often use <em>too many size steps</em> (5–7 sizes across a single screen) or rely on size alone without varying weight or color. A more sophisticated approach uses <strong>fewer sizes but greater contrast in weight and color</strong> — this is what creates the refined hierarchy seen in products like Linear, Notion, and Vercel's dashboard.</p>",
+    "tags": [
+      "typography",
+      "hierarchy",
+      "type-scale",
+      "readability"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "uv-005",
+    "category": "ui-vibe",
+    "type": "vocabulary",
+    "front": "How do you upgrade vague aesthetic descriptions into professional design vocabulary?",
+    "back": "<h4>Why Vocabulary Precision Matters</h4><p><strong>The words you use to describe a UI reveal the depth of your design thinking.</strong> In portfolio reviews and interviews, vague descriptors like \"clean,\" \"modern,\" or \"minimal\" are almost meaningless — every designer claims them. Precise vocabulary signals that you understand the <em>why</em> behind visual decisions, not just the <em>what</em>. Recruiters and senior designers listen for specificity.</p><h4>Before → After Upgrades</h4><div class='diagram'>VOCABULARY UPGRADE TABLE\n┌─────────────────────────┬──────────────────────────────────────────────┐\n│ VAGUE (avoid)           │ PRECISE (use this)                           │\n├─────────────────────────┼──────────────────────────────────────────────┤\n│ \"Clean\"                 │ \"Low visual density with generous negative   │\n│                         │  space and a restrained type scale\"          │\n├─────────────────────────┼──────────────────────────────────────────────┤\n│ \"Modern\"                │ \"Employs current spatial design conventions: │\n│                         │  large type, asymmetric grids, subtle depth\" │\n├─────────────────────────┼──────────────────────────────────────────────┤\n│ \"Bold\"                  │ \"High chromatic contrast with heavy-weight   │\n│                         │  type and saturated primary fills\"           │\n├─────────────────────────┼──────────────────────────────────────────────┤\n│ \"Minimal\"               │ \"Reductive — stripped to essential affordances│\n│                         │  with a monochromatic palette and 1–2 fonts\" │\n├─────────────────────────┼──────────────────────────────────────────────┤\n│ \"Professional\"          │ \"Conservative typographic scale, neutral     │\n│                         │  palette, high information density\"          │\n└─────────────────────────┴──────────────────────────────────────────────┘</div><h4>A Full Before → After Example</h4><div class='example-box'><div class='label'>Portfolio Description Upgrade</div><p><strong>Before:</strong> <em>\"I designed a clean, modern dashboard with a minimal look and bold typography.\"</em></p><p><strong>After:</strong> <em>\"The dashboard uses a high-contrast typographic hierarchy — pairing an 800-weight display typeface at 40px with a 400-weight body at 15px — anchored by a neutral cool-gray palette (<code>#F8FAFC</code> background, <code>#0F172A</code> primary text) with a single cobalt accent (<code>#2563EB</code>) reserved exclusively for CTAs and active states. The layout follows a 12-column grid with 24px gutters, creating a structured information density appropriate for power users.\"</em></p></div><h4>Words Worth Adding to Your Design Vocabulary</h4><ul><li><strong>Chromatic</strong> — relating to hue and saturation choices</li><li><strong>Spatial rhythm</strong> — the cadence created by consistent spacing</li><li><strong>Visual weight</strong> — the perceived heaviness of an element</li><li><strong>Affordance</strong> — visual cues that signal interactivity</li><li><strong>Tonal range</strong> — the spread between lightest and darkest values in a palette</li><li><strong>Typographic color</strong> — the overall lightness/darkness of a block of text on a page</li></ul>",
+    "tags": [
+      "vocabulary",
+      "portfolio",
+      "professional-language",
+      "critique"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "uv-006",
+    "category": "ui-vibe",
+    "type": "implementation",
+    "front": "How do you translate a 'warm, editorial, high-end' UI vibe into specific CSS decisions?",
+    "back": "<h4>Decoding the Vibe into Design Tokens</h4><p><strong>Every aesthetic vibe maps to a specific set of CSS properties, values, and constraints.</strong> \"Warm, editorial, high-end\" is a vibe used by luxury brands, upscale editorial publications, and premium lifestyle apps. Translating it requires breaking the vibe into its constituent design decisions — palette temperature, typeface genre, spacing philosophy, and border/shadow style. <em>Vague intent becomes buildable once you assign values.</em></p><h4>The Mapping Framework</h4><div class='diagram'>VIBE → TOKEN MAPPING: \"Warm Editorial High-End\"\n┌──────────────────┬────────────────────────────────────────────┐\n│ VIBE DIMENSION   │ CSS / DESIGN TOKEN DECISION                │\n├──────────────────┼────────────────────────────────────────────┤\n│ Warm             │ Background: #FAF7F2 (warm off-white)        │\n│                  │ Text: #1C1714 (warm near-black)            │\n│                  │ Accent: #C9956A (muted terracotta)         │\n├──────────────────┼────────────────────────────────────────────┤\n│ Editorial        │ Font: Playfair Display (serif) for heads   │\n│                  │ Body: DM Sans 400 at 17px / 1.75 LH        │\n│                  │ Layout: Asymmetric columns, wide margins   │\n├──────────────────┼────────────────────────────────────────────┤\n│ High-End         │ No box-shadows — use whitespace for depth  │\n│                  │ Border radius: 0px or 2px (restrained)     │\n│                  │ No gradients — flat, muted fills only      │\n│                  │ Generous padding: 48px–80px section gaps   │\n└──────────────────┴────────────────────────────────────────────┘</div><h4>Full CSS Implementation Example</h4><div class='example-box'><div class='label'>Warm Editorial Card Component</div><code>.editorial-card {<br>&nbsp;&nbsp;background: #FAF7F2;<br>&nbsp;&nbsp;border: 1px solid #E8E0D5;<br>&nbsp;&nbsp;border-radius: 2px;<br>&nbsp;&nbsp;padding: 40px 48px;<br>&nbsp;&nbsp;max-width: 680px;<br>}<br><br>.editorial-card h2 {<br>&nbsp;&nbsp;font-family: 'Playfair Display', serif;<br>&nbsp;&nbsp;font-weight: 700;<br>&nbsp;&nbsp;font-size: 36px;<br>&nbsp;&nbsp;line-height: 1.15;<br>&nbsp;&nbsp;letter-spacing: -0.01em;<br>&nbsp;&nbsp;color: #1C1714;<br>}<br><br>.editorial-card p {<br>&nbsp;&nbsp;font-family: 'DM Sans', sans-serif;<br>&nbsp;&nbsp;font-weight: 400;<br>&nbsp;&nbsp;font-size: 17px;<br>&nbsp;&nbsp;line-height: 1.75;<br>&nbsp;&nbsp;color: #4A3F38;<br>&nbsp;&nbsp;margin-top: 16px;<br>}</code></div><h4>What to Avoid (Anti-Patterns for This Vibe)</h4><ul><li><strong>No cool grays</strong> — <code>#F9FAFB</code> reads as tech/SaaS, not editorial luxury</li><li><strong>No rounded corners above 4px</strong> — softness undercuts the high-end restraint</li><li><strong>No drop shadows with spread</strong> — they introduce digital cheapness; use borders or whitespace instead</li><li><strong>No system fonts</strong> — Playfair, Cormorant Garamond, or GT Sectra are appropriate; Inter and SF Pro are not</li></ul>",
+    "tags": [
+      "implementation",
+      "css",
+      "vibe-translation",
+      "editorial"
+    ],
+    "difficulty": "advanced",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "uv-007",
+    "category": "ui-vibe",
+    "type": "structure",
+    "front": "What is Bento Box layout and how does it create a distinct UI aesthetic?",
+    "back": "<h4>Origins and Definition</h4><p><strong>Bento Box layout is a grid-based UI pattern where content is organized into visually distinct, modular containers of varying sizes — like compartments in a Japanese bento box.</strong> It surged in popularity after Apple adopted it for marketing pages (notably the Apple Silicon chip announcements, 2022–2023) and has since become a defining aesthetic of contemporary product landing pages and dashboards. The layout communicates <em>organization, confidence, and premium product thinking</em> through structured asymmetry.</p><h4>Grid Architecture</h4><p>Bento layouts are built on CSS Grid, typically using a <strong>12-column base grid with explicit row heights</strong>. The key is that cells span multiple columns and rows deliberately — a hero metric might span 8 columns and 2 rows while a supporting stat spans 4 columns and 1 row. This asymmetry within a rigid grid is what creates the signature tension.</p><div class='diagram'>BENTO LAYOUT — 12 Column Example\n┌────────────────────┬─────────┐\n│                    │  Cell B │\n│      Cell A        │  4×1    │\n│       8×2          ├─────────┤\n│                    │  Cell C │\n│                    │  4×1    │\n├────────┬───────────┴─────────┤\n│ Cell D │      Cell E         │\n│  4×1   │       8×1           │\n└────────┴────────────────────┘</div><h4>Visual Properties That Define the Bento Vibe</h4><ul><li><strong>Background:</strong> Each cell gets its own fill — typically from a curated palette. Dark cells (<code>#0F0F0F</code>), light cells (<code>#F5F5F5</code>), and accent cells (<code>#D4F84E</code> or brand color) alternate for rhythm.</li><li><strong>Border radius:</strong> Consistent, generous — typically <code>16px–24px</code> on all cells for a cohesive, friendly-premium feel</li><li><strong>Gap:</strong> Cell gaps are uniform — <code>12px</code> or <code>16px</code> — creating visible breathing room between compartments</li><li><strong>Shadows:</strong> Minimal or none — the color differentiation between cells does the separation work</li></ul><div class='example-box'><div class='label'>Bento Grid — CSS Skeleton</div><code>.bento-grid {<br>&nbsp;&nbsp;display: grid;<br>&nbsp;&nbsp;grid-template-columns: repeat(12, 1fr);<br>&nbsp;&nbsp;grid-auto-rows: 200px;<br>&nbsp;&nbsp;gap: 16px;<br>}<br><br>.cell-hero {<br>&nbsp;&nbsp;grid-column: span 8;<br>&nbsp;&nbsp;grid-row: span 2;<br>&nbsp;&nbsp;border-radius: 20px;<br>&nbsp;&nbsp;background: #0F0F0F;<br>}<br><br>.cell-stat {<br>&nbsp;&nbsp;grid-column: span 4;<br>&nbsp;&nbsp;grid-row: span 1;<br>&nbsp;&nbsp;border-radius: 20px;<br>&nbsp;&nbsp;background: #F5F5F5;<br>}</code></div><h4>How to Describe It in Your Portfolio</h4><p>Rather than saying \"I used a card layout,\" say: <em>\"The feature overview uses a Bento Box grid — a 12-column CSS Grid structure with variable cell spans, a curated dark/light/accent fill system, and 20px border radii — communicating product depth through deliberate spatial hierarchy rather than sequential scrolling.\"</em></p>",
+    "tags": [
+      "bento-box",
+      "layout",
+      "css-grid",
+      "structure"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "int-020",
+    "category": "interview",
+    "type": "behavioral",
+    "front": "Tell me about a time you had to collaborate with a developer to improve the final design output.",
+    "back": "<h4>What They're Really Asking</h4><p>Interviewers want to understand how well you <strong>communicate across disciplines</strong> and whether you see engineers as partners rather than just people who build your specs. They're also checking if you can compromise without sacrificing the quality of the user experience.</p><h4>How to Structure Your Answer (STAR)</h4><ul><li><strong>Situation:</strong> Set the context — what project, what was at stake?</li><li><strong>Task:</strong> What was your specific design responsibility?</li><li><strong>Action:</strong> How did you initiate or improve the collaboration?</li><li><strong>Result:</strong> What was the outcome for the product and the team?</li></ul><p>The best answers show that you <em>proactively</em> built the relationship — you didn't just wait for hand-off problems to happen.</p><h4>Example Answer Outline</h4><div class='example-box'><div class='label'>Strong Response Example</div><p>\"On a checkout redesign project, I noticed the developer was building components differently from my Figma specs. Instead of flagging it as an error, I scheduled a quick sync. I learned there were animation constraints I hadn't considered. Together, we simplified the transition in a way that still felt smooth for users. We also created a shared component annotation system so this wouldn't happen again. The feature shipped on time and the developer became one of my strongest allies on the team.\"</p></div><h4>What to Avoid</h4><ul><li>Don't frame the developer as the problem to be managed</li><li>Don't focus only on technical constraints — mention the <em>human</em> side of the collaboration</li><li>Avoid vague outcomes like \"it went well\" — be specific about impact</li></ul>",
+    "tags": [
+      "collaboration",
+      "cross-functional",
+      "behavioral",
+      "communication"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "int-021",
+    "category": "interview",
+    "type": "situational",
+    "front": "You're designing a feature for two very different user groups with opposite needs. How do you decide what to build?",
+    "back": "<h4>Why This Question Is Asked</h4><p>This tests your ability to <strong>navigate ambiguity and prioritize strategically</strong>. Interviewers want to see that you don't just pick one user and ignore the other — you think in terms of <em>trade-offs, data, and business context</em>.</p><h4>A Framework for Your Answer</h4><ol><li><strong>Clarify the conflict:</strong> What exactly do the two groups need differently? Are the needs truly incompatible or just different in priority?</li><li><strong>Look at the data:</strong> Which segment is larger, more valuable, or more aligned with the product's core mission?</li><li><strong>Explore design solutions:</strong> Can one design serve both with progressive disclosure, modes, or personalization?</li><li><strong>Involve stakeholders:</strong> Get alignment on which segment to prioritize before investing in design work.</li><li><strong>Test and validate:</strong> Prototype for both groups and let research inform the decision.</li></ol><div class='example-box'><div class='label'>Real-World Scenario</div><p>A project management tool serves both <strong>individual freelancers</strong> (who want simplicity) and <strong>enterprise teams</strong> (who want deep customization). A simple toggle between \"Simple\" and \"Advanced\" mode can satisfy both — but only after you validate which mode should be the default. Start with user research and business strategy before jumping to a solution.</p></div><h4>What Makes an Answer Stand Out</h4><p>The strongest answers demonstrate that you don't treat design as purely user-serving in isolation. You connect user needs to <strong>business goals and product strategy</strong>. Saying \"it depends\" is acceptable — but only if you immediately explain <em>what it depends on</em> and how you'd find out.</p><div class='diagram'>Opposite Needs → Research both → Find overlap or pick primary → Design → Test with both groups → Iterate</div>",
+    "tags": [
+      "prioritization",
+      "situational",
+      "user-research",
+      "strategy"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "int-022",
+    "category": "interview",
+    "type": "design-specific",
+    "front": "How do you decide what fidelity (low-fi vs. high-fi) to use at different stages of a design project?",
+    "back": "<h4>The Core Principle</h4><p><strong>Fidelity should match the question you're trying to answer.</strong> Using high-fidelity wireframes too early wastes time and anchors conversations in visual details before the structure is validated. Using low-fidelity too late can leave stakeholders confused about the real intent.</p><h4>Fidelity Stages</h4><div class='diagram'><pre>\nStage           | Fidelity      | Purpose\n----------------|---------------|----------------------------\nExplore ideas   | Sketches      | Speed, quantity, no attachment\nTest structure  | Lo-fi wireframes | Validate flow and layout\nGet stakeholder buy-in | Mid-fi mockups | Communicate intent clearly\nUsability testing | Hi-fi prototype | Test real interactions\nHandoff         | Polished specs | Developer accuracy\n</pre></div><h4>Practical Guidelines</h4><ul><li><strong>Low-fi (sketches, grayscale wireframes):</strong> Use when the concept is still being explored. Cheap to change, easy to discard.</li><li><strong>Mid-fi (structured wireframes with real copy):</strong> Use when you need stakeholder alignment before investing in visuals.</li><li><strong>High-fi (pixel-perfect mockups or interactive prototypes):</strong> Use when testing micro-interactions, visual hierarchy, or preparing for developer handoff.</li></ul><div class='example-box'><div class='label'>Example Decision</div><p>You're designing a new onboarding flow. In week one, <strong>paper sketches</strong> let you explore 5 different flows in a single afternoon. By week two, a <strong>mid-fi clickable prototype</strong> in Figma is enough to test with 5 users and get PM sign-off. Only after research confirms the structure do you invest in a <strong>high-fi prototype</strong> for the final stakeholder presentation and handoff.</p></div><h4>Common Mistake to Avoid</h4><p>Many junior designers jump to high-fidelity too quickly because it <em>looks impressive</em>. This leads to over-attachment to ideas before they're validated, and wastes time when the concept needs to change after testing.</p>",
+    "tags": [
+      "fidelity",
+      "prototyping",
+      "design-process",
+      "design-specific"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "int-023",
+    "category": "interview",
+    "type": "curveball",
+    "front": "Design a library card system for people who don't know how to read.",
+    "back": "<h4>Why This Question Is Asked</h4><p>This is a <strong>creative constraint problem</strong>. The interviewer is not expecting a perfect answer — they want to see how you <em>reframe assumptions</em>, think inclusively, and generate ideas under ambiguity. Your process matters more than your solution.</p><h4>How to Approach It</h4><ol><li><strong>Clarify the context:</strong> Is this for children? Adults with low literacy? Non-native speakers? People with visual or cognitive impairments?</li><li><strong>Challenge the assumption:</strong> A library isn't just about reading — it can offer audiobooks, videos, workshops, and community resources.</li><li><strong>Identify core jobs to be done:</strong> Find and borrow items → Know what's available → Return items → Get recommendations.</li><li><strong>Design for the constraint:</strong> Remove reliance on text wherever possible.</li></ol><div class='example-box'><div class='label'>Possible Design Ideas</div><ul><li><strong>Icon and color-coded categories</strong> (e.g., a headphone icon = audiobooks, a film icon = DVDs)</li><li><strong>QR code cards</strong> that link to audio or video descriptions of catalog items</li><li><strong>Staff-assisted kiosk</strong> with voice interaction: \"Say what you're looking for\"</li><li><strong>Physical card with a photo ID</strong> instead of a name, linked to a digital record</li><li><strong>Visual receipt</strong> showing due dates as calendar icons with illustrations</li></ul></div><h4>What Makes a Strong Answer</h4><p>Don't just list features — <strong>show your thinking process out loud</strong>. Start by asking clarifying questions, then define user needs, then ideate. Acknowledge trade-offs (e.g., voice interfaces are great but not always private in a public library). End with how you'd validate your ideas through testing with actual users from this group.</p>",
+    "tags": [
+      "creative-thinking",
+      "inclusive-design",
+      "curveball",
+      "problem-framing"
+    ],
+    "difficulty": "advanced",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "int-024",
+    "category": "interview",
+    "type": "behavioral",
+    "front": "Tell me about a time you had to simplify a complex design without losing important functionality.",
+    "back": "<h4>What Interviewers Are Looking For</h4><p>This question tests your <strong>judgment, prioritization skills, and user empathy</strong>. Simplification isn't about removing features — it's about making the right things <em>easier to find and use</em>. Interviewers want to see that you can make hard decisions and explain the reasoning behind them.</p><h4>How to Build Your Answer</h4><ul><li><strong>Explain the original complexity:</strong> What made the design hard to use? Too many options? Poor hierarchy? Mixed mental models?</li><li><strong>Describe your diagnosis process:</strong> Did you run usability tests? Analyze drop-off data? Talk to users?</li><li><strong>Walk through your decisions:</strong> What did you remove, hide, or reorganize — and why?</li><li><strong>Share the result:</strong> Quantify if possible (e.g., task completion rate improved by 20%).</li></ul><div class='example-box'><div class='label'>Strong Answer Example</div><p>\"Our settings page had grown to 47 options over 3 years. Analytics showed that 80% of users only ever touched 5 of them. I ran a card sorting exercise with 8 users to understand their mental model. Then I proposed a 'Quick Settings' panel with the top 5 defaults, and moved advanced settings behind a single 'More options' link. Task time for common actions dropped by 40%, and support tickets about finding settings fell significantly the next quarter.\"</p></div><h4>Key Principles to Mention</h4><p>Reference design concepts like <strong>progressive disclosure</strong> (showing only what's needed at each step), or <strong>Hick's Law</strong> (more choices = longer decision time). Showing that your simplification was <em>data-informed</em>, not just an aesthetic preference, signals strong design maturity.</p>",
+    "tags": [
+      "simplification",
+      "behavioral",
+      "ux-decisions",
+      "communication"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "int-025",
+    "category": "interview",
+    "type": "situational",
+    "front": "You've just joined a team and inherited a design system that's messy and inconsistent. What do you do?",
+    "back": "<h4>Why This Is a Tricky Question</h4><p>The interviewer is testing whether you <strong>act impulsively or strategically</strong>. Jumping in to redesign everything on day one is a red flag — it signals poor collaboration and disrespect for existing work. A strong answer shows patience, empathy, and a structured approach.</p><h4>A Step-by-Step Approach</h4><ol><li><strong>Audit first, judge later:</strong> Document what exists before deciding what's broken. Use a component inventory or visual audit.</li><li><strong>Understand the history:</strong> Talk to the people who built it. Inconsistencies often exist for reasons — legacy tech constraints, team growth, rushed timelines.</li><li><strong>Identify the highest-pain points:</strong> Where does the inconsistency cause real user problems or slow down the team the most?</li><li><strong>Propose a phased plan:</strong> Don't suggest rebuilding everything at once. Prioritize quick wins that build trust.</li><li><strong>Get buy-in:</strong> Align with engineers and PMs before making changes — design system work affects everyone.</li></ol><div class='example-box'><div class='label'>Example First 30 Days Plan</div><ul><li>Week 1–2: Audit all existing components and document inconsistencies without judgment</li><li>Week 2–3: Interview 2-3 engineers and designers about pain points</li><li>Week 3–4: Present findings and a prioritized roadmap to the team</li><li>Month 2: Tackle highest-impact inconsistency (e.g., button styles) as a small, testable fix</li></ul></div><h4>What to Avoid Saying</h4><p>Avoid saying you'd <em>\"rebuild it from scratch\"</em> or that the previous team <em>\"did it wrong.\"</em> This signals a lack of collaboration instinct. Instead, frame your approach as <strong>adding value incrementally</strong> and bringing the team along with you.</p>",
+    "tags": [
+      "design-systems",
+      "situational",
+      "onboarding",
+      "strategy"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "int-026",
+    "category": "interview",
+    "type": "design-specific",
+    "front": "How do you measure whether a design is successful after it launches?",
+    "back": "<h4>Why Designers Need to Know This</h4><p>Many designers treat launch as the finish line — but <strong>the best designers treat launch as the beginning of learning</strong>. Knowing how to measure success shows that you think in outcomes, not just outputs, and that you're accountable for the impact of your work.</p><h4>Types of Success Metrics</h4><ul><li><strong>Quantitative metrics:</strong> Task completion rate, conversion rate, error rate, time-on-task, bounce rate, NPS or CSAT scores</li><li><strong>Qualitative metrics:</strong> User interviews post-launch, support ticket themes, usability session observations</li><li><strong>Business metrics:</strong> Revenue lift, churn reduction, feature adoption rate, retention</li></ul><div class='diagram'><pre>\nDesign Goal          | Metric to Track\n---------------------|---------------------------\nEasier sign-up       | Completion rate, drop-off step\nFaster checkout      | Time-on-task, cart abandonment\nBetter navigation    | Pages per session, search usage\nMore engagement      | DAU/MAU, session length\nFewer errors         | Error rate, support tickets\n</pre></div><div class='example-box'><div class='label'>Example Measurement Plan</div><p>You redesigned an onboarding flow to reduce drop-off. <strong>Before launch</strong>, you define success as: completion rate increases from 52% to 70% within 60 days. <strong>After launch</strong>, you check analytics weekly, run 5 user interviews at the 30-day mark, and review any new support tickets mentioning onboarding. At 60 days, you present findings to the team and decide if iteration is needed.</p></div><h4>Making It Part of Your Process</h4><p>Always define your <strong>success criteria before you design</strong>, not after. Work with your PM and data analyst to agree on the right metrics upfront. This prevents post-launch disagreements about whether the design actually worked, and it positions you as a <em>strategic partner</em>, not just an executor.</p>",
+    "tags": [
+      "metrics",
+      "design-specific",
+      "outcomes",
+      "post-launch"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "vc-013",
+    "category": "vibe-coding",
+    "type": "concept",
+    "front": "What is 'vibe coding' and how does it change how designers build things?",
+    "back": "<h4>What Is Vibe Coding?</h4><p><strong>Vibe coding is the practice of building software by describing what you want in plain language to an AI tool, rather than writing every line of code by hand.</strong> The term was coined by AI researcher Andrej Karpathy in 2025. Instead of memorizing syntax, you focus on <em>what</em> you want to build — and let the AI handle the <em>how</em>.</p><h4>How It Works in Practice</h4><p>You describe a feature, UI component, or interaction in a prompt. The AI generates working code. You review it, test it in the browser, and iterate by prompting again. This loop replaces the traditional write → debug → Google → rewrite cycle.</p><ul><li><strong>You still need to understand</strong> what the code does — you just don't write it from scratch</li><li><strong>Design instincts matter more than ever</strong> — knowing what looks and feels right guides your prompts</li><li><strong>Error reading is essential</strong> — you'll paste errors back into the AI to fix them</li></ul><h4>Why It Matters for Product Designers</h4><div class='example-box'><div class='label'>Real-world scenario</div><p>A designer wants to prototype a live search filter for a product list. Instead of learning JavaScript array filtering from scratch, they prompt: <em>\"Write a JavaScript function that filters a list of product cards by name as the user types in a search box.\"</em> The AI returns working code in seconds. The designer pastes it in, sees it work, and moves on to the next interaction.</p></div><h4>The Shift in Mindset</h4><p>Vibe coding doesn't make coding knowledge useless — it <strong>lowers the floor</strong> so more people can build, while raising the ceiling for what experienced developers can produce. As a designer, your job is to be a precise, creative director of the AI, not a passive user of it.</p>",
+    "tags": [
+      "vibe-coding",
+      "ai",
+      "fundamentals",
+      "prototyping"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "vc-014",
+    "category": "vibe-coding",
+    "type": "prompting",
+    "front": "What is 'role-based prompting' and how does it improve AI-generated code?",
+    "back": "<h4>What Is Role-Based Prompting?</h4><p><strong>Role-based prompting means telling the AI to act as a specific type of expert before asking your question.</strong> This shapes the tone, depth, and assumptions the AI uses when responding. Think of it like hiring a specialist for a task rather than asking a generalist.</p><h4>How to Use It</h4><p>Start your prompt with a role definition, then give your actual request. The more specific the role, the more targeted the response.</p><div class='example-box'><div class='label'>Weak vs. strong prompt</div><ul><li><strong>Weak:</strong> <em>\"Make a button component in React.\"</em> — vague, no context</li><li><strong>Strong:</strong> <em>\"You are a senior front-end developer who writes clean, accessible React components. Create a reusable Button component that accepts label, onClick, and disabled props, with appropriate ARIA attributes.\"</em></li></ul></div><h4>Tool Comparison</h4><div class='diagram'><pre>Tool         | Role-based strength\n-------------|---------------------\nClaude       | Excellent — follows complex role instructions consistently across long sessions\nChatGPT      | Very good — responds well to roles, especially with GPT-4o\nGemini       | Good — works best when role is tied to a Google Workspace context\nGitHub Copilot | Limited — role prompts work in chat mode, not inline completion</pre></div><h4>Why It Works</h4><p>AI models are trained on vast amounts of text with different voices and expertise levels. A role acts as a <strong>filter</strong> that activates the most relevant patterns. Without a role, the AI defaults to a generic middle-ground response. With one, it produces output that matches the standards of that expert.</p><p>As a designer using vibe coding, useful roles include: <em>\"senior UI developer,\"</em> <em>\"accessibility engineer,\"</em> or <em>\"CSS specialist who avoids unnecessary frameworks.\"</em></p>",
+    "tags": [
+      "prompting",
+      "ai",
+      "role-based",
+      "vibe-coding"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "vc-015",
+    "category": "vibe-coding",
+    "type": "workflow",
+    "front": "What is the 'prompt → test → iterate' loop, and how do you use it to build a feature?",
+    "back": "<h4>The Core Loop of Vibe Coding</h4><p><strong>The prompt → test → iterate loop is the fundamental workflow of vibe coding.</strong> Instead of planning everything upfront, you move in small cycles: write a prompt, get code, test it in the browser, and refine based on what you see. Each loop is short — often just a few minutes.</p><h4>The Three Steps</h4><ol><li><strong>Prompt</strong> — Describe one specific thing you want to build or fix. Be precise about inputs, outputs, and constraints.</li><li><strong>Test</strong> — Paste the code into your project, open the browser, and interact with it. Look for visual bugs, broken behavior, or console errors.</li><li><strong>Iterate</strong> — If something is wrong, describe the problem back to the AI. Paste error messages directly. Ask for targeted fixes, not full rewrites.</li></ol><h4>What This Looks Like in Practice</h4><div class='example-box'><div class='label'>Building a modal dialog</div><ol><li><em>Prompt:</em> \"Create an HTML/CSS modal that appears when a button is clicked and closes when clicking outside it or pressing Escape.\"</li><li><em>Test:</em> Modal opens — but the Escape key doesn't work. Console shows no errors.</li><li><em>Iterate:</em> \"The Escape key isn't closing the modal. Add a keydown event listener for the Escape key that closes it.\"</li><li><em>Test again:</em> Works. Move to the next feature.</li></ol></div><h4>Tips for Staying Efficient</h4><ul><li><strong>One feature per loop</strong> — don't pile multiple requests into one prompt</li><li><strong>Paste full error messages</strong> — the AI can't guess what broke without seeing it</li><li><strong>Save working versions</strong> — before iterating, keep a copy of code that works</li><li><strong>Name what you see</strong> — describe the visual or behavioral problem specifically, not just \"it's broken\"</li></ul>",
+    "tags": [
+      "workflow",
+      "vibe-coding",
+      "iteration",
+      "prototyping"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "vc-016",
+    "category": "vibe-coding",
+    "type": "command",
+    "front": "How do you use CSS Custom Properties (variables) to build a consistent design system in code?",
+    "back": "<h4>What Are CSS Custom Properties?</h4><p><strong>CSS Custom Properties — also called CSS variables — let you store reusable values like colors, spacing, and font sizes in one place.</strong> They're defined with a <code>--</code> prefix and used with the <code>var()</code> function. Think of them like design tokens in Figma, but for your actual CSS.</p><h4>Basic Syntax</h4><div class='example-box'><div class='label'>Defining and using CSS variables</div><pre><code>/* Define variables on the root element */\n:root {\n  --color-primary: #5C6BC0;\n  --color-text: #1A1A2E;\n  --space-md: 16px;\n  --radius-sm: 6px;\n  --font-body: 'Inter', sans-serif;\n}\n\n/* Use them anywhere in your CSS */\n.button {\n  background-color: var(--color-primary);\n  padding: var(--space-md);\n  border-radius: var(--radius-sm);\n  font-family: var(--font-body);\n  color: white;\n}</code></pre></div><h4>Why This Matters for Designers</h4><p>CSS variables make your code <strong>match how you already think in design tools.</strong> When you change <code>--color-primary</code> in one place, every button, link, and highlight updates automatically — just like editing a Figma style. This is especially powerful when prompting AI: you can say <em>\"use our design tokens from :root\"</em> and the AI will reference your variables instead of hardcoding hex values.</p><h4>Pro Tips</h4><ul><li><strong>Group by category</strong> — colors, spacing, typography, shadows, radii</li><li><strong>Use semantic names</strong> — <code>--color-danger</code> is clearer than <code>--color-red</code></li><li><strong>You can override variables in components</strong> — useful for dark mode or themed sections</li><li><strong>Fallback values:</strong> <code>var(--color-primary, #5C6BC0)</code> — the second value is used if the variable isn't defined</li></ul>",
+    "tags": [
+      "css",
+      "design-system",
+      "variables",
+      "vibe-coding"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "vc-017",
+    "category": "vibe-coding",
+    "type": "tip",
+    "front": "How do you give AI the right context so it doesn't make wrong assumptions about your project?",
+    "back": "<h4>Why Context Matters So Much</h4><p><strong>AI tools generate code based entirely on what you tell them.</strong> Without enough context, they make assumptions — about your tech stack, design style, browser support needs, and skill level. These assumptions are often wrong, leading to code you can't use or don't understand.</p><p>Think of it like briefing a contractor. The more clearly you describe the building, the less time is wasted on wrong materials.</p><h4>What Context to Always Include</h4><ul><li><strong>Tech stack</strong> — Are you using plain HTML/CSS/JS, React, Vue, or something else?</li><li><strong>Existing code</strong> — Paste the relevant snippet the new code needs to connect with</li><li><strong>Design constraints</strong> — \"We use an 8px spacing grid\" or \"colors must come from our CSS variables\"</li><li><strong>Your skill level</strong> — \"Explain what each part does\" or \"I'm comfortable with JS, skip basic explanations\"</li><li><strong>Output format</strong> — \"Return only the CSS\" or \"Give me the full updated file\"</li></ul><h4>A Context-Rich Prompt Template</h4><div class='example-box'><div class='label'>Strong context prompt</div><p><em>\"I'm building a portfolio site using plain HTML, CSS, and vanilla JavaScript — no frameworks. I have a CSS variable system already defined in :root. I'm pasting my current nav HTML below. Add a mobile hamburger menu that toggles a dropdown nav on screens under 768px. Keep animations subtle. Explain any JavaScript you add. [paste HTML here]\"</em></p></div><h4>A Simple Rule</h4><p>Before sending any prompt, ask yourself: <strong>\"If a smart developer read only this message, would they have everything they need?\"</strong> If not, add what's missing. A longer, clearer prompt almost always produces better output than a short, vague one — especially with tools like <em>Claude</em>, which excel at following detailed, layered instructions.</p>",
+    "tags": [
+      "prompting",
+      "context",
+      "vibe-coding",
+      "ai"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "vc-018",
+    "category": "vibe-coding",
+    "type": "prompting",
+    "front": "What is 'prompt chaining' and when should you use it instead of one big prompt?",
+    "back": "<h4>What Is Prompt Chaining?</h4><p><strong>Prompt chaining means breaking a complex task into a sequence of smaller prompts, where the output of one becomes the input of the next.</strong> Instead of asking the AI to do everything at once, you guide it step by step — like a series of design sprints rather than one big launch.</p><h4>One Big Prompt vs. A Chain</h4><div class='diagram'><pre>ONE BIG PROMPT\n\"Build me a full dashboard with a nav, data table,\n search filter, charts, and dark mode toggle.\"\n→ Often produces messy, generic, hard-to-edit code\n\nPROMPT CHAIN\nStep 1: \"Build the HTML structure for a dashboard layout with a sidebar and main content area.\"\nStep 2: \"Add a data table inside the main area using this sample JSON: [...]\"\nStep 3: \"Add a search input that filters the table rows by the 'name' column.\"\nStep 4: \"Add a dark mode toggle that switches a .dark class on the body.\"\n→ Each piece is clean, tested, and intentional</pre></div><h4>When to Use Prompt Chaining</h4><ul><li>When the feature has <strong>multiple distinct parts</strong> that each need to work independently</li><li>When you want to <strong>test each step</strong> before adding more complexity</li><li>When you're working in <strong>Claude</strong> — its 1M token context means the full chain stays in memory, so it maintains consistency across many steps</li><li>When a single prompt keeps returning <strong>overwhelming or incorrect output</strong></li></ul><h4>A Real Design Example</h4><div class='example-box'><div class='label'>Building an onboarding flow step by step</div><ol><li>Prompt 1: Create the HTML for a 3-step onboarding modal with a progress indicator.</li><li>Prompt 2: Add JavaScript to show only the current step and advance on \"Next\" click.</li><li>Prompt 3: Add form validation so Step 2 can't advance if the email field is empty.</li><li>Prompt 4: Add a smooth fade transition between steps using CSS.</li></ol></div><p>Chaining keeps each part testable and gives you a clear mental model of what the AI built and why.</p>",
+    "tags": [
+      "prompting",
+      "prompt-chaining",
+      "workflow",
+      "ai"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "vc-019",
+    "category": "vibe-coding",
+    "type": "concept",
+    "front": "What is a JavaScript object, and how do you use it to represent design data?",
+    "back": "<h4>What Is a JavaScript Object?</h4><p><strong>A JavaScript object is a collection of related data stored as key-value pairs.</strong> Each key is a label (like a column name in a spreadsheet), and each value is the data associated with it. Objects are one of the most fundamental building blocks of JavaScript — and they map naturally to how designers think about components and content.</p><h4>Basic Syntax</h4><div class='example-box'><div class='label'>A product card as a JS object</div><pre><code>const productCard = {\n  id: 42,\n  name: \"Wireless Headphones\",\n  price: 89.99,\n  inStock: true,\n  tags: [\"audio\", \"wireless\", \"sale\"],\n  image: \"headphones.jpg\"\n};\n\n// Access values with dot notation\nconsole.log(productCard.name);   // \"Wireless Headphones\"\nconsole.log(productCard.price);  // 89.99\nconsole.log(productCard.tags[0]); // \"audio\"</code></pre></div><h4>Why This Matters for Designers</h4><p>When you vibe-code a component — like a card, a user profile, or a notification — the AI will often structure the data as an object. <strong>Understanding objects helps you read, edit, and prompt around that data confidently.</strong> You can tell the AI: <em>\"The component receives an object with name, price, and inStock properties\"</em> and it will write code that uses those exact keys.</p><h4>Objects vs. Arrays</h4><ul><li><strong>Object</strong> — represents <em>one thing</em> with named properties: one product, one user, one card</li><li><strong>Array of objects</strong> — represents <em>a list of things</em>: all products, all users, all cards</li></ul><div class='diagram'><pre>// Array of objects — common pattern for lists\nconst products = [\n  { id: 1, name: \"Headphones\", price: 89.99 },\n  { id: 2, name: \"Keyboard\",   price: 129.00 },\n  { id: 3, name: \"Webcam\",     price: 59.50 }\n];</pre></div><p>Most UI data you work with — products, users, notifications, navigation items — is an <strong>array of objects</strong>. Recognizing this pattern makes AI-generated code much easier to read and modify.</p>",
+    "tags": [
+      "javascript",
+      "fundamentals",
+      "data",
+      "vibe-coding"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "en-020",
+    "category": "english",
+    "type": "vocabulary",
+    "front": "Align (verb) — professional usage",
+    "back": "<h4>Definition</h4><p><strong>To align means to bring people, ideas, or goals into agreement so that everyone is working toward the same direction.</strong> In professional settings, 'align' is used constantly in meetings, emails, and presentations. It is more formal and collaborative-sounding than simply saying 'agree.'</p><h4>Common Patterns</h4><ul><li><strong>align with</strong> — 'This decision aligns with our strategy.'</li><li><strong>align on</strong> — 'Let's align on the timeline before we proceed.'</li><li><strong>get aligned</strong> — 'We need to get aligned as a team.'</li><li><strong>bring someone into alignment</strong> — 'I want to bring stakeholders into alignment.'</li></ul><p>Notice that <em>align with</em> is used for things (ideas, goals), while <em>align on</em> is used for topics or decisions you discuss together.</p><h4>In Context</h4><div class='example-box'><div class='label'>Real examples for a designer</div><ul><li>'Before we finalize the design, I want to <strong>align with</strong> the product team on the user goals.'</li><li>'Can we schedule a quick call to <strong>align on</strong> which direction to take?'</li><li>'This new flow <strong>aligns with</strong> the feedback we received from last week's research.'</li><li>'I just want to make sure we're all <strong>aligned</strong> before I move forward.'</li></ul></div><h4>Why This Word Matters</h4><p>Using 'align' shows that you are thinking about collaboration and shared goals, not just your own opinion. It signals professional maturity. Instead of saying 'Does everyone agree?', saying 'Are we aligned on this?' sounds more confident and structured.</p>",
+    "tags": [
+      "vocabulary",
+      "professional",
+      "meetings",
+      "collaboration"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "en-021",
+    "category": "english",
+    "type": "phrase",
+    "front": "How do you suggest a change without sounding critical of someone's work?",
+    "back": "<h4>The Challenge</h4><p>In design collaboration, you often need to propose a different direction without making your colleague feel their work was bad. <strong>The key is to separate the idea from the person</strong>, and to frame your suggestion as an addition or exploration rather than a correction.</p><h4>Useful Phrases</h4><ul><li><em>'Building on what you've done here, I was wondering if we could also explore…'</em></li><li><em>'I really like this direction. One thing I'd love to see is…'</em></li><li><em>'What if we tried [X] as an alternative? I'm curious how it would feel.'</em></li><li><em>'This is a strong foundation. Could we push it a little further by…?'</em></li><li><em>'I have a small suggestion — feel free to ignore it if it doesn't fit your vision.'</em></li></ul><p>Notice how these phrases <strong>acknowledge the existing work first</strong>, then introduce the new idea gently. This two-step structure — validate, then suggest — is very effective in professional English.</p><h4>Example Scenario</h4><div class='example-box'><div class='label'>Giving feedback on a UI design</div><p>Your colleague presents a dashboard layout. You think the hierarchy is unclear, but you want to be tactful.</p><p><strong>Avoid:</strong> 'The hierarchy isn't working here.'</p><p><strong>Better:</strong> 'This is looking really clean. I wonder if increasing the contrast on the primary action might help guide the user's eye even more. What do you think?'</p></div><h4>Key Principle</h4><p>Always <strong>ask questions rather than make declarations</strong> when giving suggestions. 'What if we tried…?' or 'Could this work…?' invites dialogue and makes the other person feel like a collaborator, not a recipient of criticism.</p>",
+    "tags": [
+      "phrase",
+      "feedback",
+      "collaboration",
+      "communication"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "en-022",
+    "category": "english",
+    "type": "writing",
+    "front": "How do you write a follow-up email after a design review meeting?",
+    "back": "<h4>Why Follow-Up Emails Matter</h4><p>After a design review, people often remember conversations differently. <strong>A well-written follow-up email confirms what was decided, who is responsible for what, and what happens next.</strong> It protects you professionally and keeps the project moving. It also shows that you are organized and proactive.</p><h4>The Structure</h4><ol><li><strong>Opening:</strong> Thank people for their time and briefly name the meeting.</li><li><strong>Summary:</strong> List the key decisions or feedback points agreed upon.</li><li><strong>Next steps:</strong> State clearly who will do what, and by when.</li><li><strong>Closing:</strong> Invite replies if anything is missing or incorrect.</li></ol><p>Keep it <em>short and scannable</em>. Use bullet points, not long paragraphs. People are busy and need to find information quickly.</p><h4>Example Email</h4><div class='example-box'><div class='label'>Follow-up after a design review</div><p><strong>Subject:</strong> Follow-up — Checkout Flow Review (Apr 15)</p><p>Hi team,</p><p>Thank you for a productive session today. Here is a quick summary of what we discussed:</p><ul><li>We agreed to simplify the checkout flow from 4 steps to 3.</li><li>The 'Guest Checkout' option will be moved to a more prominent position.</li><li>Copy for the confirmation screen needs to be reviewed by the content team.</li></ul><p><strong>Next steps:</strong></p><ul><li>Maya — Updated wireframes by April 22</li><li>James — Content review by April 20</li></ul><p>Please let me know if I've missed anything. Happy to clarify!</p><p>Best,<br>Ana</p></div><h4>Language Tips</h4><p>Use phrases like <em>'As discussed…'</em>, <em>'We agreed that…'</em>, and <em>'The next step is…'</em> to signal that this is a summary, not new information. End with an open invitation like <em>'Let me know if anything needs to be corrected'</em> — this shows confidence without being rigid.</p>",
+    "tags": [
+      "writing",
+      "email",
+      "meetings",
+      "professional"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "en-023",
+    "category": "english",
+    "type": "vocabulary",
+    "front": "Stakeholder (noun) — professional usage",
+    "back": "<h4>Definition</h4><p><strong>A stakeholder is any person or group who has an interest in or is affected by the outcome of a project.</strong> In product design, stakeholders include people inside the company (like product managers, developers, and executives) and sometimes people outside (like users or clients). The word comes from the idea of someone who has a 'stake' — meaning a share or investment — in the result.</p><h4>Types of Stakeholders in Design</h4><ul><li><strong>Internal stakeholders</strong> — Product managers, engineers, marketing, leadership</li><li><strong>External stakeholders</strong> — End users, clients, regulatory bodies</li><li><strong>Primary stakeholders</strong> — Directly affected by the design decisions</li><li><strong>Secondary stakeholders</strong> — Indirectly affected or influential</li></ul><div class='diagram'>Decision influence map:\n\nHigh influence + High interest → Manage closely\nHigh influence + Low interest  → Keep informed\nLow influence  + High interest → Keep engaged\nLow influence  + Low interest  → Monitor only</div><h4>In Context</h4><div class='example-box'><div class='label'>Using 'stakeholder' naturally</div><ul><li>'I need to present this concept to the <strong>stakeholders</strong> before we move to prototyping.'</li><li>'Let's do a <strong>stakeholder</strong> alignment session at the start of the project.'</li><li>'Different <strong>stakeholders</strong> have different priorities — engineering wants it fast, marketing wants it beautiful.'</li></ul></div><h4>Why It Matters</h4><p>Using the word 'stakeholder' correctly signals that you understand the broader context of your work. It shows that you recognize design decisions affect more than just the end user — they affect business goals, technical constraints, and organizational priorities too.</p>",
+    "tags": [
+      "vocabulary",
+      "professional",
+      "stakeholders",
+      "product"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "en-024",
+    "category": "english",
+    "type": "presentation",
+    "front": "How do you respond when a stakeholder asks a question you weren't expecting during a presentation?",
+    "back": "<h4>Why This Happens</h4><p>Even a perfectly prepared presentation will receive unexpected questions. Stakeholders bring different concerns — business risk, technical feasibility, user research gaps — that you may not have anticipated. <strong>How you respond to surprise questions often matters more than the answer itself.</strong> Staying calm and structured builds credibility.</p><h4>A Three-Step Framework</h4><ol><li><strong>Acknowledge</strong> — Show that you heard and value the question.</li><li><strong>Respond honestly</strong> — Answer what you can; admit what you don't know.</li><li><strong>Close with action</strong> — Offer to follow up if needed.</li></ol><p>This structure prevents two common mistakes: <em>panicking and going silent</em>, or <em>rambling to fill the silence</em>.</p><h4>Useful Phrases</h4><ul><li><em>'That's a great point — I haven't fully explored that angle yet, but here's my initial thinking…'</em></li><li><em>'I want to give you an accurate answer, so let me look into that and follow up by end of week.'</em></li><li><em>'That's outside the scope of today's presentation, but it's definitely worth discussing — can we add it to the agenda for next time?'</em></li><li><em>'I don't have that data in front of me right now, but I can pull it together and send it to you.'</em></li></ul><div class='example-box'><div class='label'>Scenario: Unexpected question about user research</div><p>You're presenting a new onboarding flow. A stakeholder asks: 'Do we have data showing users actually struggle with the current version?'</p><p><strong>Response:</strong> 'That's a really important question. We have qualitative feedback from user interviews pointing to friction at this step, but I want to pull the quantitative drop-off data to give you a complete picture. I'll include that in my follow-up by Thursday — does that work?'</p></div><h4>The Key Mindset</h4><p>Never pretend to know something you don't. <strong>Confidence comes from how you manage uncertainty</strong>, not from having all the answers. A clear, calm commitment to follow up is always more impressive than a guess.</p>",
+    "tags": [
+      "presentation",
+      "stakeholders",
+      "communication",
+      "Q&A"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "en-025",
+    "category": "english",
+    "type": "writing",
+    "front": "How do you write a clear and persuasive project proposal in English?",
+    "back": "<h4>What Is a Project Proposal?</h4><p><strong>A project proposal is a written document that explains what you want to do, why it matters, and how you plan to do it.</strong> As a designer, you might write one when pitching a new feature, a design sprint, or a research initiative. A good proposal is concise, logical, and focused on the reader's priorities — usually business value or user impact.</p><h4>The Core Structure</h4><ol><li><strong>Problem statement</strong> — What issue are you solving? Use data or a user pain point.</li><li><strong>Proposed solution</strong> — What are you suggesting? Keep it high-level here.</li><li><strong>Expected outcome</strong> — What will improve? Be specific and measurable if possible.</li><li><strong>Scope and timeline</strong> — What is included, and how long will it take?</li><li><strong>What you need</strong> — Resources, approvals, or collaborators required.</li></ol><p>Each section should be <em>short and scannable</em>. Use bullet points and headers. Decision-makers rarely read long paragraphs.</p><h4>Example Proposal Opening</h4><div class='example-box'><div class='label'>Opening two paragraphs of a design proposal</div><p><strong>Problem:</strong> Currently, 42% of new users abandon the app during onboarding (data from Q1 2026). Exit surveys suggest the setup flow is confusing and takes too long.</p><p><strong>Proposal:</strong> I'd like to run a two-week design sprint to redesign the onboarding experience. The goal is to reduce drop-off by at least 20% and improve the completion rate. I'll need one week of engineering support for prototyping and access to 5 users for testing.</p></div><h4>Language Tips</h4><p>Use <em>action verbs</em> to sound confident: 'propose,' 'recommend,' 'aim to,' 'plan to.' Avoid weak language like 'maybe we could think about…' Use <strong>'The goal is to…'</strong> and <strong>'I propose that…'</strong> to signal clarity of intent. End with a clear ask: what decision or approval do you need from the reader?</p>",
+    "tags": [
+      "writing",
+      "proposal",
+      "professional",
+      "persuasion"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "en-026",
+    "category": "english",
+    "type": "phrase",
+    "front": "Concessive phrase: 'While I understand… / I can see that… however…'",
+    "back": "<h4>What Is a Concessive Phrase?</h4><p><strong>A concessive phrase acknowledges another person's point before introducing a contrasting or different view.</strong> It is one of the most important tools in professional English because it shows you are listening and respectful, even when you disagree. Without it, disagreement can sound blunt or dismissive.</p><h4>The Pattern</h4><div class='diagram'>Structure:\n[Acknowledge their point] + [Contrast word] + [Your point]\n\nExample:\n'I can see that speed is a priority HERE,'\n+ 'however,'\n+ 'skipping user testing at this stage could create bigger problems later.'</div><h4>Key Phrases to Use</h4><ul><li><em>'While I understand the time pressure, I think we should still…'</em></li><li><em>'I can see that this approach is simpler. However, it may not scale well.'</em></li><li><em>'I appreciate that concern. That said, the research suggests a different direction.'</em></li><li><em>'You make a fair point. Even so, I'd like us to consider…'</em></li></ul><p>The words <strong>'however,' 'that said,' 'even so,'</strong> and <strong>'nevertheless'</strong> are the most common contrast words used after a concession in formal or professional English.</p><h4>In Context</h4><div class='example-box'><div class='label'>Disagreeing with a stakeholder diplomatically</div><p>A product manager says: 'Let's just copy what the competitor is doing — it's faster.'</p><p><strong>Your response:</strong> 'I can see that this would save time in the short term. However, copying the competitor's pattern without testing it with our users means we might inherit their problems too. Could we do a quick validation round before committing?'</p></div><h4>Why This Matters</h4><p>In English-speaking professional environments, <strong>direct disagreement without acknowledgment often sounds aggressive</strong>, even if that is not your intention. Using a concessive phrase first makes you sound thoughtful and collaborative, which makes people more open to hearing your actual point.</p>",
+    "tags": [
+      "phrase",
+      "grammar",
+      "disagreement",
+      "communication"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "mo-008",
+    "category": "motivation",
+    "type": "discipline",
+    "front": "Your motivation comes and goes like the weather. How do you build a system that works even on cloudy days?",
+    "back": "<h4>Motivation Is a Guest, Not a Host</h4><p>Here's the truth no one tells you early enough: <strong>motivation was never supposed to be the engine — it's just the spark.</strong> Waiting to feel motivated before you start is like waiting for perfect weather before you leave the house. Discipline is the coat you wear regardless.</p><p>The most consistent creators, coders, and designers you admire aren't more motivated than you. They've simply built <em>systems that don't require motivation to activate.</em></p><h4>The Architecture of a Motivation-Proof Routine</h4><ul><li><strong>Shrink the entry cost.</strong> Make the first action so small it feels embarrassing to skip. Open the file. Write one line of code. Sketch one box.</li><li><strong>Anchor habits to existing ones.</strong> After I make coffee → I open my learning app. After I sit down → I do five minutes of reading.</li><li><strong>Design your environment.</strong> Put your sketchbook on your desk. Keep your code editor pinned. Remove the friction between you and the work.</li><li><strong>Use time blocks, not moods.</strong> Schedule the work like a meeting — then show up to it.</li></ul><h4>A Real-World Anchor</h4><div class='example-box'><div class='label'>Practical tip from a working designer-turned-developer</div><p>One frontend developer kept a sticky note on her monitor that said: <em>\"Just open the editor.\"</em> That was the whole rule. No pressure to code — just open it. Most days, once she opened it, she stayed for an hour. On the hard days, she closed it after five minutes. <strong>Both counted as showing up.</strong> Over a year, that habit built more skill than any burst of inspiration ever had.</p></div><h4>What to Do Right Now</h4><p>Identify the <strong>one smallest action</strong> that represents starting your most important learning goal. Write it down. That's your trigger. The goal isn't to feel ready — it's to <em>make readiness irrelevant.</em></p>",
+    "tags": [
+      "habits",
+      "discipline",
+      "consistency",
+      "systems"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "mo-009",
+    "category": "motivation",
+    "type": "mindset",
+    "front": "You look at someone more skilled than you and feel discouraged. What's a healthier way to use comparison?",
+    "back": "<h4>The Comparison Trap — and the Comparison Tool</h4><p>Comparison is one of the most natural things a human brain does. <strong>It's not the enemy.</strong> The problem isn't that you're comparing — it's <em>who</em> you're comparing yourself to, and what story you're telling about the gap.</p><p>When you see someone's finished work, polished portfolio, or fluent code, you're seeing the output of thousands of invisible hours. You're comparing your <strong>behind-the-scenes</strong> to their <strong>highlight reel.</strong> That's not a fair fight — and it was never meant to be one.</p><h4>Two Kinds of Comparison</h4><div class='diagram'>Comparison Type → Effect on You\n─────────────────────────────────────────\nUpward + Envy    →  \"I'll never be that good\"  ❌\nUpward + Curiosity → \"How did they get there?\"  ✅\nBackward         →  \"Look how far I've come\"    ✅\nSideways         →  \"We're figuring it out together\" ✅</div><h4>Reframe: Use Them as a Proof of Concept</h4><p>Every person ahead of you on the path is actually giving you a gift: <strong>proof that the destination exists.</strong> They were once where you are. Their existence means the skill is learnable — by a human, with a human brain, with human doubts. Possibly even doubts like yours.</p><div class='example-box'><div class='label'>A mindset shift worth trying</div><p>The next time you see work that makes you feel small, try replacing <em>\"I could never do that\"</em> with <em>\"That's what's possible — and I'm on my way.\"</em> It sounds simple, but neuroscience backs it up: the stories we repeat to ourselves literally shape what we attempt. <strong>Make yours a story of direction, not distance.</strong></p></div><h4>The Only Comparison That Actually Helps</h4><p>Measure yourself against <strong>past you</strong> — the you from three months ago, six months ago, a year ago. That's a comparison you can win every single time you keep going. And winning it, even in small ways, is what keeps the engine running.</p>",
+    "tags": [
+      "comparison",
+      "mindset",
+      "growth",
+      "self-awareness"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "mo-010",
+    "category": "motivation",
+    "type": "perseverance",
+    "front": "What happened when Vera Wang failed to make the Olympic figure skating team — and what does her story teach us about redirection?",
+    "back": "<h4>The Setup: A Dream That Didn't Happen</h4><p>Vera Wang trained as a competitive figure skater for most of her childhood and teenage years. She had one singular goal: <strong>make the 1968 U.S. Olympic team.</strong> She didn't make it. At 21, that dream was over, and she had to decide what to do with the rest of her life.</p><p>She didn't give up on having a creative life. She redirected. She joined <em>Vogue</em> as an editor, then moved to Ralph Lauren as a design director — and at 40 years old, she launched her own bridal wear company. <strong>Vera Wang is now one of the most recognized names in fashion design in the world.</strong></p><h4>What Her Story Actually Teaches</h4><ul><li><strong>Failure in one lane doesn't disqualify you from the race.</strong> It sometimes just means you're on the wrong track.</li><li><strong>Skills transfer.</strong> The discipline, aesthetics, and dedication she built through skating didn't disappear — they poured into her design career.</li><li><strong>It's never too late to start.</strong> She launched her brand at 40. You are right on time.</li><li><strong>Redirection isn't giving up.</strong> Sometimes it's the most courageous act of self-knowledge you can perform.</li></ul><div class='example-box'><div class='label'>The lesson for your learning journey</div><p>If a project fails, a concept won't click, or a path you chose turns out to be wrong — <strong>that's not the end of your story.</strong> It's just a scene change. Every skill you've built, every late night you pushed through, every moment of confusion you sat with — none of that is wasted. It's all becoming the foundation of something you can't fully see yet. <em>Keep building the foundation.</em></p></div><h4>A Question Worth Sitting With</h4><p>Is there something you've written off as a failure that might actually be a <strong>redirection?</strong> Sometimes the most important thing isn't to push harder in the same direction — it's to look up and see where your real path is leading.</p>",
+    "tags": [
+      "perseverance",
+      "failure",
+      "redirection",
+      "real-stories"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "mo-011",
+    "category": "motivation",
+    "type": "happiness",
+    "front": "What is the \"arrival fallacy\" — and how is it quietly stealing your joy right now?",
+    "back": "<h4>The Myth of \"When I Finally...\"</h4><p>The <strong>arrival fallacy</strong> is the belief that once you reach a specific goal, you'll finally feel fulfilled, confident, and happy. <em>\"When I finish this course... when I get my first job... when my portfolio is good enough... then I'll feel okay about myself.\"</em></p><p>The psychologist Tal Ben-Shahar coined the term after noticing something strange: the happiest moment for many high achievers wasn't reaching the goal. It was the <em>anticipation</em> of reaching it. Once they arrived, the feeling faded fast — and a new \"arrival\" had to be invented to chase.</p><h4>Why Our Brains Do This</h4><p>Your brain is wired to adapt. It's called <strong>hedonic adaptation</strong> — the tendency to return to a baseline level of happiness regardless of what happens. This is why a new skill, a completed project, or even a new job stops feeling exciting after a few weeks. It's not that you're ungrateful. <strong>It's that you're human.</strong></p><div class='example-box'><div class='label'>A gentle reframe for your learning journey</div><p>A junior designer once said she'd let herself feel proud <em>only</em> after she landed her first UX role. But when she got the offer, she cried — not from joy, but from exhaustion. She'd spent two years withholding permission to feel good. <strong>Don't wait for the destination to start enjoying the ride.</strong> The curiosity you feel right now, the small \"aha\" moments, the first time something clicks — <em>that is the good stuff.</em> It won't feel this fresh again.</p></div><h4>What to Do Instead</h4><ul><li><strong>Name one thing you've learned this week</strong> — not mastered, just touched. That counts.</li><li><strong>Notice process wins.</strong> You sat down when you didn't want to. You asked a question you were afraid to ask. You tried again.</li><li><strong>Let yourself feel it now.</strong> Not as a reward for finishing, but as fuel for continuing.</li></ul><p>The goal isn't to stop having goals. It's to stop <em>mortgaging your happiness</em> against them.</p>",
+    "tags": [
+      "happiness",
+      "joy",
+      "self-compassion",
+      "mindset"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "mo-012",
+    "category": "motivation",
+    "type": "discipline",
+    "front": "What is \"temptation bundling\" — and how can you use it to make hard learning feel less like a chore?",
+    "back": "<h4>The Problem With Willpower</h4><p>Relying on willpower to sit down and study every day is exhausting. Willpower is a limited resource — it depletes as the day goes on, and it crumbles completely when you're tired, stressed, or distracted. <strong>You need a better strategy than just trying harder.</strong></p><p>Enter <strong>temptation bundling</strong> — a concept from behavioral economist Katherine Milkman at the Wharton School. The idea is elegantly simple: <em>pair something you want to do with something you need to do.</em></p><h4>How It Works</h4><div class='diagram'>WANT to do          +    NEED to do\n────────────────────────────────────────\nListen to a podcast  →  Only while studying\nDrink a fancy coffee →  Only at your study desk\nWatch a comfort show →  Only while doing easy review\nTake a walk outside  →  Only when listening to a lesson\nPlay lo-fi music     →  Only during focused work blocks</div><h4>The Science Behind It</h4><p>In Milkman's original study, participants who could only listen to audiobooks they loved <em>while</em> exercising went to the gym 51% more often. The enjoyable activity became a <strong>reward that was only unlocked by doing the hard thing.</strong> Over time, the two become mentally linked — and the hard thing starts to feel more appealing on its own.</p><div class='example-box'><div class='label'>Try this today</div><p>Pick one thing you genuinely enjoy — a specific playlist, a great cup of tea, an episode of a show you love — and make a personal rule: <strong>you only get that thing when you're doing your learning session.</strong> Not as a reward after. <em>During.</em> Make the learning the ticket to something good, and watch how much easier it becomes to buy that ticket.</p></div><h4>A Small Warning</h4><p>Choose bundles where the enjoyment doesn't completely overpower the learning. Watching a gripping drama <em>while</em> trying to absorb new CSS concepts might not work well. But a familiar, low-attention playlist while practicing? <strong>That's the sweet spot.</strong></p>",
+    "tags": [
+      "discipline",
+      "habits",
+      "productivity",
+      "learning-strategies"
+    ],
+    "difficulty": "beginner",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "mo-013",
+    "category": "motivation",
+    "type": "mindset",
+    "front": "What does neuroscience say about the moment just before a skill \"clicks\" — and why is that the most important moment to not quit?",
+    "back": "<h4>The Dark Before the Dawn</h4><p>There's a specific moment in learning that feels like failure but is actually the opposite. You've been working on something — a concept, a skill, a piece of code — and suddenly it feels <em>harder than when you started.</em> More confusing. More overwhelming. You think: <em>\"Maybe I'm just not cut out for this.\"</em></p><p><strong>Neuroscientists call what happens next myelination.</strong> And it's the most hopeful thing you'll learn today.</p><h4>What's Actually Happening in Your Brain</h4><p>Every time you practice a skill, your neurons fire along a specific pathway. Each repetition — even the clumsy, frustrating ones — prompts your brain to wrap that pathway in a fatty insulating sheath called <strong>myelin.</strong> More myelin means faster, stronger, more automatic signal transmission. More myelin means you're getting better. <em>Even when it doesn't feel like it.</em></p><p>The period of maximum confusion often corresponds to a period of <strong>maximum myelination</strong> — your brain is working hardest precisely when you feel most lost. The click you're waiting for is the moment the new wiring comes online.</p><div class='example-box'><div class='label'>A story about the moment before the click</div><p>A self-taught developer described learning JavaScript promises for three weeks with zero understanding. \"I read the same article eight times. I watched four videos. Nothing.\" On a Tuesday evening when she almost closed her laptop for good, she tried writing the code one more time — and it worked. Not just worked: <em>made sense.</em> She said it felt like someone had turned a light on in a room that had always been there. <strong>She was three minutes from quitting when her brain finally finished building the wire.</strong></p></div><h4>What This Means for You</h4><ul><li><strong>Confusion is not a sign of failure</strong> — it's a sign of active construction.</li><li>The harder something feels, the more myelin your brain is laying down right now.</li><li><strong>The click is coming.</strong> Your job is simply to still be there when it arrives.</li></ul><p>You are never closer to understanding something than in the moment it feels most impossible. <em>Hold on just a little longer.</em></p>",
+    "tags": [
+      "mindset",
+      "neuroscience",
+      "learning",
+      "growth"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "mo-014",
+    "category": "motivation",
+    "type": "perseverance",
+    "front": "You've been working hard for months and you still don't feel \"good enough.\" What should you do with that feeling?",
+    "back": "<h4>First: That Feeling Has a Name</h4><p>What you're experiencing is often called <strong>impostor syndrome</strong> — the persistent internal experience of believing you're not as competent as others perceive you to be, and that you'll eventually be \"found out.\" It was first named by psychologists Pauline Clance and Suzanne Imes in 1978, and studies suggest <strong>over 70% of people experience it</strong> at some point in their careers.</p><p>Here's the quietly radical truth: <em>the fact that you feel this way is often evidence that you're genuinely growing.</em> People who aren't learning don't worry about not knowing enough. Awareness of a gap requires first having enough knowledge to see the gap exists.</p><h4>The Dunning-Kruger Flip Side</h4><div class='diagram'>Confidence vs. Competence Over Time\n─────────────────────────────────────────\nBeginners   → High confidence (don't know what they don't know)\nIntermediate → Low confidence  (see the full scope of the mountain) ← YOU ARE HERE\nAdvanced    → Calibrated confidence (earned, accurate self-knowledge)\n─────────────────────────────────────────\n\"The valley of despair\" is not a sign you're failing.\nIt's a sign you've leveled up enough to see clearly.</div><h4>What to Actually Do With the Feeling</h4><ul><li><strong>Document your evidence.</strong> Write down three things you can do now that you couldn't do three months ago. Make it concrete and specific.</li><li><strong>Share your work anyway.</strong> Impostor syndrome thrives in silence. The antidote is external reality checks — which only come when you put work into the world.</li><li><strong>Say it out loud to someone you trust.</strong> \"I feel like I don't know enough.\" Nine times out of ten, they'll point to something you've forgotten you know.</li><li><strong>Keep a \"wins\" file.</strong> A simple doc or folder where you save positive feedback, completed projects, and moments of progress. Read it on hard days.</li></ul><div class='example-box'><div class='label'>Words worth returning to</div><p>Maya Angelou — celebrated author of <em>I Know Why the Caged Bird Sings</em>, recipient of the Presidential Medal of Freedom — once said: <em>\"I have written eleven books, but each time I think, 'Uh oh, they're going to find out now. I've run a game on everybody, and they're going to find out.'\"</em> <strong>If Maya Angelou felt like an impostor, you are in extraordinary company.</strong> The feeling isn't proof of your inadequacy. It's proof of your humanity — and your ambition.</p></div><h4>The Real Goal</h4><p>You don't need to <em>eliminate</em> the feeling of not being good enough. You need to learn to <strong>act alongside it.</strong> Courage isn't the absence of doubt — it's continuing to show up while the doubt is still there. And you're already doing that. <em>That counts.</em></p>",
+    "tags": [
+      "perseverance",
+      "impostor-syndrome",
+      "self-doubt",
+      "resilience"
+    ],
+    "difficulty": "intermediate",
+    "createdAt": "2026-04-15"
   }
 ]
