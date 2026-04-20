@@ -1,132 +1,132 @@
 [
   {
-    "title": "The AI Coding Wars Are Heating Up",
-    "summary": "OpenAI, Google, and Anthropic are locked in an intensifying battle to become the go-to AI coding tool, with 'vibe coding' — using AI to generate entire apps through natural language — going mainstream. The competition is reshaping how developers and non-developers alike write software. For designers and product builders, this means increasingly powerful tools to prototype and ship without deep coding knowledge.",
+    "title": "OpenAI's Codex Gets Major Upgrade to Compete with Claude Code",
+    "summary": "OpenAI has rolled out significant updates to Codex, its agentic coding system, adding the ability to control your Mac, generate images, and retain memory across sessions. The move is a direct response to the rising popularity of Anthropic's Claude Code, signaling an intensifying rivalry between the two AI giants. For designers and developers, this means more powerful AI coding assistants are arriving fast — with features that go well beyond autocomplete.",
     "source": "The Verge",
-    "url": "https://www.theverge.com/column/910019/ai-coding-wars-openai-google-anthropic",
-    "date": "2026-04-10",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/913034/openai-codex-updates-use-macos",
+    "date": "2026-04-16",
     "tags": [
       "coding",
       "openai",
-      "anthropic"
+      "agentic-ai"
     ],
-    "id": "news-2026-04-13-001"
+    "id": "news-2026-04-20-001"
   },
   {
-    "title": "Claude Is the Talk of the Industry at HumanX Conference",
-    "summary": "At San Francisco's major AI conference HumanX, Anthropic's Claude model dominated conversations among developers and enterprise users, overshadowing competitors. The buzz signals that Claude has cemented itself as a serious rival to ChatGPT for practical, professional AI use. For designers and product teams evaluating AI tools, Claude's rising status is worth paying attention to.",
-    "source": "TechCrunch",
-    "url": "https://techcrunch.com/2026/04/12/at-the-humanx-conference-everyone-was-talking-about-claude/",
-    "date": "2026-04-12",
+    "title": "Anthropic's New Cybersecurity Model 'Claude Mythos' Is Winning Over the Government",
+    "summary": "Anthropic has unveiled Claude Mythos Preview, a cybersecurity-focused AI model that appears to be softening the Trump administration's previously hostile stance toward the company. Despite being labeled a national security concern just months ago, Anthropic is now reportedly back in conversations with high-level officials. It's a notable example of how specialized AI models can shift political and enterprise relationships quickly.",
+    "source": "The Verge",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/914229/tides-turning-anthropic-trump-administration-cybersecurity-mythos-preview",
+    "date": "2026-04-17",
     "tags": [
       "anthropic",
       "models",
-      "industry-trends"
+      "policy"
     ],
-    "id": "news-2026-04-13-002"
+    "id": "news-2026-04-20-002"
   },
   {
-    "title": "Trump Officials Reportedly Pushing Banks to Test Anthropic's New 'Mythos' Model",
-    "summary": "U.S. government officials are reportedly encouraging major banks to pilot Anthropic's newly revealed Mythos model, a surprising move given the Department of Defense recently flagged Anthropic as a supply-chain risk. The contradiction highlights the mixed signals around AI governance and which models are considered safe for high-stakes use. It also hints that Mythos may be a specialized model targeting regulated industries.",
+    "title": "OpenAI Shuts Down Sora and Loses Key Leaders in Strategic Pivot",
+    "summary": "OpenAI has officially shut down its Sora video generation project, and both the team's leader Bill Peebles and Chief Product Officer Kevin Weil have left the company. The departures reflect OpenAI's deliberate strategy to cut 'side quests' and double down on enterprise AI. It's a sharp signal about where OpenAI sees its future — and a reminder that even high-profile AI products can get axed when priorities shift.",
     "source": "TechCrunch",
-    "url": "https://techcrunch.com/2026/04/12/trump-officials-may-be-encouraging-banks-to-test-anthropics-mythos-model/",
-    "date": "2026-04-12",
+    "url": "https://techcrunch.com/2026/04/17/kevin-weil-and-bill-peebles-exit-openai-as-company-continues-to-shed-side-quests/",
+    "date": "2026-04-17",
     "tags": [
-      "anthropic",
+      "openai",
       "models",
       "industry-trends"
     ],
-    "id": "news-2026-04-13-003"
+    "id": "news-2026-04-20-003"
   },
   {
-    "title": "Stanford's 2026 AI Index: Charts That Cut Through the Hype",
-    "summary": "Stanford's annual AI Index report is out, offering a data-driven snapshot of where AI actually stands — from capabilities and adoption rates to economic impact and safety concerns. It's one of the most reliable ways to separate real progress from marketing noise. If you want a grounded view of AI's trajectory heading into the second half of the decade, this is essential reading.",
+    "title": "Google's AI Mode Now Lets You Browse Sources Side-by-Side in Chrome",
+    "summary": "Google has updated AI Mode in Chrome so that clicking a source opens it alongside your chat, rather than pulling you away to a new tab. This seemingly small UX change has big implications for research workflows — you can now ask follow-up questions about what's on a page without losing your AI conversation. It's a smart design decision that makes AI-assisted browsing feel more fluid and contextual.",
+    "source": "The Verge",
+    "url": "https://www.theverge.com/tech/913109/google-ai-mode-tabs-sources",
+    "date": "2026-04-16",
+    "tags": [
+      "design-tools",
+      "google",
+      "ux"
+    ],
+    "id": "news-2026-04-20-004"
+  },
+  {
+    "title": "The App Store Is Booming Again — and AI Tools May Be the Reason",
+    "summary": "New data from Appfigures shows a notable surge in new app launches in 2026, with analysts pointing to AI-powered development tools as a likely driver. Lower barriers to building apps — thanks to tools like Codex and Claude — may be fueling a new wave of mobile software creation. For product designers, this suggests the pipeline from idea to shipped app is getting shorter and more accessible.",
+    "source": "TechCrunch",
+    "url": "https://techcrunch.com/2026/04/18/the-app-store-is-booming-again-and-ai-may-be-why/",
+    "date": "2026-04-18",
+    "tags": [
+      "industry-trends",
+      "coding",
+      "product-development"
+    ],
+    "id": "news-2026-04-20-005"
+  },
+  {
+    "title": "Chinese Tech Workers Are Being Asked to Train AI to Replace Themselves",
+    "summary": "In China, employees at tech companies are being directed by managers to document their workflows and personality traits so AI agents can replicate them — a practice stirring anxiety even among those who were previously AI enthusiasts. A viral GitHub project called 'Colleague Skill' brought the trend into public view and sparked backlash. It raises uncomfortable but important questions about what 'human in the loop' really means in AI-augmented workplaces.",
     "source": "MIT Tech Review",
-    "url": "https://www.technologyreview.com/2026/04/13/1135675/want-to-understand-the-current-state-of-ai-check-out-these-charts/",
-    "date": "2026-04-13",
-    "tags": [
-      "research",
-      "industry-trends",
-      "models"
-    ],
-    "id": "news-2026-04-13-004"
-  },
-  {
-    "title": "Mark Zuckerberg Is Building an AI Clone of Himself for Employee Meetings",
-    "summary": "Meta is reportedly training an AI avatar on Zuckerberg's voice, image, mannerisms, and public statements so it can stand in for him in meetings and provide feedback to employees. It's a striking real-world test of AI-powered digital twins at the executive level. The experiment raises fascinating questions about identity, leadership, and how AI avatars might reshape workplace communication.",
-    "source": "The Verge",
-    "url": "https://www.theverge.com/tech/910990/meta-ceo-mark-zuckerberg-ai-clone",
-    "date": "2026-04-13",
+    "url": "https://www.technologyreview.com/2026/04/20/1136149/chinese-tech-workers-ai-colleagues/",
+    "date": "2026-04-20",
     "tags": [
       "industry-trends",
-      "design-tools",
-      "models"
+      "agentic-ai",
+      "policy"
     ],
-    "id": "news-2026-04-13-005"
+    "id": "news-2026-04-20-006"
   },
   {
-    "title": "Gen Z Has a Love-Hate Relationship with AI",
-    "summary": "A new Gallup survey of nearly 1,600 people ages 14–29 finds that Gen Z's enthusiasm for AI is fading even as they continue to rely on it daily for school and work. The disillusionment likely reflects AI's increasing ubiquity and its uneven quality — it's everywhere, but not always good. For product designers, this tension is a critical signal when designing AI-powered experiences for younger users.",
-    "source": "The Verge",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/909687/gen-z-doesnt-like-ai-gallup",
-    "date": "2026-04-10",
-    "tags": [
-      "industry-trends",
-      "research",
-      "ux"
-    ],
-    "id": "news-2026-04-13-006"
-  },
-  {
-    "title": "Stalking Victim Sues OpenAI, Alleging ChatGPT Enabled Her Abuser",
-    "summary": "A new lawsuit claims OpenAI ignored at least three warnings — including its own internal mass-casualty flag — while a ChatGPT user used the tool to fuel a stalking and harassment campaign against his ex-girlfriend. The case is a serious test of AI companies' responsibility when their tools are used to cause real harm. It's likely to accelerate scrutiny around AI safety guardrails and accountability.",
+    "title": "AI Chip Startup Cerebras Files for IPO After Major OpenAI and AWS Deals",
+    "summary": "Cerebras, the AI chip startup known for its wafer-scale processors, has filed for an IPO after landing a deal with Amazon Web Services and a reported $10 billion-plus agreement with OpenAI. The filing reflects growing investor confidence in the infrastructure layer powering AI — and signals that the hardware race is heating up well beyond Nvidia. For anyone building AI products, chip supply and cost are increasingly central concerns.",
     "source": "TechCrunch",
-    "url": "https://techcrunch.com/2026/04/10/stalking-victim-sues-openai-claims-chatgpt-fueled-her-abusers-delusions-and-ignored-her-warnings/",
-    "date": "2026-04-10",
+    "url": "https://techcrunch.com/2026/04/18/ai-chip-startup-cerebras-files-for-ipo/",
+    "date": "2026-04-18",
     "tags": [
+      "industry-trends",
       "openai",
-      "safety",
-      "industry-trends"
+      "hardware"
     ],
-    "id": "news-2026-04-13-007"
+    "id": "news-2026-04-20-007"
   },
   {
-    "title": "AI-Generated Lego War Videos Go Viral — and Reveal AI's Propaganda Power",
-    "summary": "An Iranian content group called Explosive Media has produced a stream of AI-generated Lego-style videos about the US-Iran conflict that have gone massively viral, outperforming official White House communications. The videos are a vivid demonstration of how accessible AI video tools can be weaponized for narrative warfare. It's a wake-up call for anyone thinking about AI-generated media, authenticity, and influence at scale.",
-    "source": "The Verge",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/909948/explosive-media-lego-iran-war-trump-netanyahu",
-    "date": "2026-04-10",
+    "title": "The '12-Month Window': AI Startups Are Racing Against Foundation Models",
+    "summary": "A sharp TechCrunch piece explores a growing anxiety in the AI startup world: many products exist only because the big foundation model companies haven't moved into their niche yet — and that window may be closing fast. As models like GPT and Claude become more capable and broadly deployed, startups built on thin layers of specialization face real existential risk. It's a must-read framing for anyone thinking about where to build in the AI ecosystem.",
+    "source": "TechCrunch",
+    "url": "https://techcrunch.com/2026/04/19/the-12-month-window/",
+    "date": "2026-04-19",
     "tags": [
       "industry-trends",
-      "design-tools",
-      "research"
+      "product-development",
+      "models"
     ],
-    "id": "news-2026-04-13-008"
+    "id": "news-2026-04-20-008"
   },
   {
-    "title": "OpenClaw Security Flaw Gave Attackers Silent Admin Access",
-    "summary": "The viral AI agentic tool OpenClaw had a critical security vulnerability that allowed unauthenticated attackers to silently gain admin access to users' systems. The flaw — discovered shortly after Anthropic also temporarily banned OpenClaw's creator — is a stark reminder that fast-moving AI tools can carry serious security risks. Designers and developers using agentic AI tools should scrutinize their security posture carefully.",
-    "source": "Ars Technica",
-    "url": "https://arstechnica.com/security/2026/04/heres-why-its-prudent-for-openclaw-users-to-assume-compromise/",
-    "date": "2026-04-03",
-    "tags": [
-      "coding",
-      "safety",
-      "industry-trends"
-    ],
-    "id": "news-2026-04-13-009"
-  },
-  {
-    "title": "AI Articles Don't Need AI Art — And The New Yorker's Sam Altman Cover Proves It",
-    "summary": "A Verge essay argues that using AI-generated illustrations for articles about AI is creatively lazy and often unsettling, using The New Yorker's eerie AI-generated portrait of Sam Altman as a prime example. The piece is a thoughtful provocation for designers about when AI art serves a story — and when it undermines it. As AI image tools become default options, the design community needs sharper criteria for when to use them.",
+    "title": "The RAM Shortage Fueling AI's Growth Could Last Until 2030",
+    "summary": "A deep shortfall in DRAM memory — the kind needed to run AI workloads — could persist for years, with suppliers expected to meet only 60% of demand by end of 2027, and some forecasts pushing the crunch to 2030. Samsung, SK Hynix, and Micron are all scrambling to scale production, but demand from AI data centers is outpacing them. For anyone building or deploying AI products, rising compute costs and hardware constraints are increasingly real bottlenecks.",
     "source": "The Verge",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/910460/new-yorker-david-szauder-illustration-generative-ai",
-    "date": "2026-04-11",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/914672/the-ram-shortage-could-last-years",
+    "date": "2026-04-20",
     "tags": [
-      "design-tools",
       "industry-trends",
-      "ux"
+      "hardware",
+      "models"
     ],
-    "id": "news-2026-04-13-010"
+    "id": "news-2026-04-20-009"
+  },
+  {
+    "title": "Is 'AI Is Inevitable' Becoming a Trap? A Reality Check on the Hype Cycle",
+    "summary": "The Vergecast digs into the growing absurdity of AI hype — exemplified by shoe company Allbirds rebranding as an AI company and briefly seeing its stock price increase sevenfold. The episode asks whether we've hit peak AI silliness, and what it means when 'inevitable' becomes a rhetorical shield for bad decisions. It's a grounding perspective for anyone navigating AI adoption decisions in product and design work.",
+    "source": "The Verge",
+    "url": "https://www.theverge.com/podcast/913792/ai-divide-sam-altman-vergecast",
+    "date": "2026-04-17",
+    "tags": [
+      "industry-trends",
+      "policy",
+      "product-development"
+    ],
+    "id": "news-2026-04-20-010"
   }
 ]
